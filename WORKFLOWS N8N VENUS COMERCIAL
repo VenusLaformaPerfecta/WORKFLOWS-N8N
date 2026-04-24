@@ -312,8 +312,8 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').first().json.messages[0].from }}",
-        "textBody": "={{ $json.message.content.parte2 }}",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte2 }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.whatsApp",
@@ -336,8 +336,8 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').first().json.messages[0].from }}",
-        "textBody": "={{ $json.message.content.parte3 }}",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte3 }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.whatsApp",
@@ -360,8 +360,8 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').first().json.messages[0].from }}",
-        "textBody": "={{ $json.message.content.parte4 }}",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte4 }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.whatsApp",
@@ -384,8 +384,8 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').first().json.messages[0].from }}",
-        "textBody": "={{ $json.message.content.parte5 }}",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte5 }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.whatsApp",
@@ -408,8 +408,8 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').first().json.messages[0].from }}",
-        "textBody": "={{ $json.message.content.parte6 }}",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte6 }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.whatsApp",
@@ -432,14 +432,14 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').first().json.messages[0].from }}",
-        "textBody": "={{ $json.message.content.parte7 }}",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte7 }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        32,
+        304,
         1280
       ],
       "name": "Send message 30",
@@ -671,9 +671,7 @@
       "id": "ec28601e-295e-4f80-b0bc-f9fd56ca68e4"
     },
     {
-      "parameters": {
-        "amount": 3
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
@@ -685,9 +683,7 @@
       "webhookId": "98c9eb7f-b743-4814-8856-d964c206786d"
     },
     {
-      "parameters": {
-        "amount": 7
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
@@ -699,9 +695,7 @@
       "webhookId": "8d001d2b-3f67-4e54-ac42-dab0d4a3a999"
     },
     {
-      "parameters": {
-        "amount": 11
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
@@ -714,7 +708,7 @@
     },
     {
       "parameters": {
-        "amount": 15
+        "amount": 12
       },
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
@@ -727,9 +721,7 @@
       "webhookId": "5a4a1c0b-49ac-428d-8b1c-f12515092bf3"
     },
     {
-      "parameters": {
-        "amount": 19
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
@@ -744,15 +736,15 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('WhatsApp Trigger1').first().json.messages[0].from }}",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
         "textBody": "={{ $json.message.content.parte1 }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        0,
-        -32
+        -16,
+        -48
       ],
       "name": "Enviar WhatsApp",
       "id": "7e6600e2-d5ae-446c-bc52-0ea22ddbfb40",
@@ -765,9 +757,7 @@
       }
     },
     {
-      "parameters": {
-        "amount": 23
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
@@ -783,7 +773,11 @@
         "updates": [
           "messages"
         ],
-        "options": {}
+        "options": {
+          "messageStatusUpdates": [
+            "all"
+          ]
+        }
       },
       "type": "n8n-nodes-base.whatsAppTrigger",
       "typeVersion": 1,
@@ -836,6 +830,30 @@
     },
     {
       "parameters": {
+        "operation": "send",
+        "phoneNumberId": "967228859816058",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte8 }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        32,
+        1504
+      ],
+      "name": "Send message ",
+      "id": "6f625550-51d7-4024-b828-1ca930a672dc",
+      "webhookId": "53c346a6-7c50-420b-95bb-8222afa5b937",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "KA3kaxHkgldVBb0O",
+          "name": "WhatsApp account Salida venus Comercial"
+        }
+      }
+    },
+    {
+      "parameters": {
         "conditions": {
           "options": {
             "caseSensitive": true,
@@ -846,22 +864,12 @@
           "conditions": [
             {
               "id": "8fc4790e-8b15-4c55-a4ee-53e6e216524c",
-              "leftValue": "={{ $json.message.content.parte1 }}",
+              "leftValue": "={{ $json.message.content.parte8 }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
                 "operation": "notEmpty",
                 "singleValue": true
-              }
-            },
-            {
-              "id": "571e7e94-b278-4646-9375-b78e5823fc3f",
-              "leftValue": "",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
               }
             }
           ],
@@ -873,25 +881,302 @@
       "typeVersion": 2.2,
       "position": [
         -416,
-        -32
+        1520
       ],
-      "name": "If27",
-      "alwaysOutputData": false,
-      "id": "c9213b1f-d841-4cc5-91ba-327303079b62"
+      "name": "If31",
+      "id": "d08e677f-2507-4c80-9172-29e8feda6768"
     },
     {
-      "parameters": {
-        "amount": 1
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -192,
-        -48
+        -208,
+        1504
       ],
-      "name": "Wait1",
-      "id": "6941f5ee-216b-4ca9-83f2-52949d076dbb",
-      "webhookId": "98c9eb7f-b743-4814-8856-d964c206786d"
+      "name": "Wait13",
+      "id": "f106375d-9c01-4b83-814a-397a5093e290",
+      "webhookId": "4f909f5e-4912-4e5d-b2f7-f73faac067fb"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "967228859816058",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte9 }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        128,
+        1712
+      ],
+      "name": "Send message 31",
+      "id": "34c65968-c07d-4661-af2b-01b5ddb28fd7",
+      "webhookId": "53c346a6-7c50-420b-95bb-8222afa5b937",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "KA3kaxHkgldVBb0O",
+          "name": "WhatsApp account Salida venus Comercial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8fc4790e-8b15-4c55-a4ee-53e6e216524c",
+              "leftValue": "={{ $json.message.content.parte9 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -320,
+        1728
+      ],
+      "name": "If32",
+      "id": "19186353-8090-4d7a-9d47-bcd03e20a949"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -112,
+        1712
+      ],
+      "name": "Wait14",
+      "id": "3b2884e7-fe99-4697-8825-a741a28e2d85",
+      "webhookId": "4f909f5e-4912-4e5d-b2f7-f73faac067fb"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "967228859816058",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte10 }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        128,
+        1904
+      ],
+      "name": "Send message 32",
+      "id": "ff8dc08c-4800-4cc3-9f7d-8d212a2ec9a1",
+      "webhookId": "53c346a6-7c50-420b-95bb-8222afa5b937",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "KA3kaxHkgldVBb0O",
+          "name": "WhatsApp account Salida venus Comercial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8fc4790e-8b15-4c55-a4ee-53e6e216524c",
+              "leftValue": "={{ $json.message.content.parte10 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -320,
+        1920
+      ],
+      "name": "If33",
+      "id": "96512510-5583-49f1-976b-04cf02033e86"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -112,
+        1904
+      ],
+      "name": "Wait15",
+      "id": "a03a6ae9-7a7f-4e0b-9204-8dd2b2a39264",
+      "webhookId": "4f909f5e-4912-4e5d-b2f7-f73faac067fb"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "967228859816058",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte11 }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        144,
+        2080
+      ],
+      "name": "Send message 33",
+      "id": "2c10d688-2fff-4b59-8157-02d1c531f498",
+      "webhookId": "53c346a6-7c50-420b-95bb-8222afa5b937",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "KA3kaxHkgldVBb0O",
+          "name": "WhatsApp account Salida venus Comercial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8fc4790e-8b15-4c55-a4ee-53e6e216524c",
+              "leftValue": "={{ $json.message.content.parte11 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -304,
+        2096
+      ],
+      "name": "If34",
+      "id": "8aa0abe5-ab9b-4e3d-a613-a3c8ebc5131f"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -96,
+        2080
+      ],
+      "name": "Wait16",
+      "id": "4623eb2e-d607-40a7-9052-0e16fd6b3b54",
+      "webhookId": "4f909f5e-4912-4e5d-b2f7-f73faac067fb"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "967228859816058",
+        "recipientPhoneNumber": "={{ $('Preparar Datos').item.json.sessionId }}",
+        "textBody": "={{ $('Divisor de Mensaje').item.json.message.content.parte12 }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        160,
+        2240
+      ],
+      "name": "Send message 34",
+      "id": "7211a435-b0b2-4b7a-8b7e-1c179f3fbd8f",
+      "webhookId": "53c346a6-7c50-420b-95bb-8222afa5b937",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "KA3kaxHkgldVBb0O",
+          "name": "WhatsApp account Salida venus Comercial"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8fc4790e-8b15-4c55-a4ee-53e6e216524c",
+              "leftValue": "={{ $json.message.content.parte12 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -288,
+        2256
+      ],
+      "name": "If35",
+      "id": "a96975cc-492d-42f0-9fca-1270c114d0c9"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -80,
+        2240
+      ],
+      "name": "Wait17",
+      "id": "4967cb62-794a-4529-9ae5-8610240c1a07",
+      "webhookId": "4f909f5e-4912-4e5d-b2f7-f73faac067fb"
     }
   ],
   "connections": {
@@ -1028,7 +1313,32 @@
             "index": 0
           },
           {
-            "node": "If27",
+            "node": "Enviar WhatsApp",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If31",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If32",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If33",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If34",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If35",
             "type": "main",
             "index": 0
           }
@@ -1194,11 +1504,110 @@
         ]
       ]
     },
-    "If27": {
+    "If31": {
       "main": [
         [
           {
-            "node": "Wait1",
+            "node": "Wait13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait13": {
+      "main": [
+        [
+          {
+            "node": "Send message ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If32": {
+      "main": [
+        [
+          {
+            "node": "Wait14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait14": {
+      "main": [
+        [
+          {
+            "node": "Send message 31",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If33": {
+      "main": [
+        [
+          {
+            "node": "Wait15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait15": {
+      "main": [
+        [
+          {
+            "node": "Send message 32",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If34": {
+      "main": [
+        [
+          {
+            "node": "Wait16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait16": {
+      "main": [
+        [
+          {
+            "node": "Send message 33",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If35": {
+      "main": [
+        [
+          {
+            "node": "Wait17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait17": {
+      "main": [
+        [
+          {
+            "node": "Send message 34",
             "type": "main",
             "index": 0
           }
@@ -1212,6 +1621,9 @@
     "instanceId": "9a8d0686adf6914aaf7bd3e472cc20cbf146406b96153e84a847e6d5310c9d64"
   }
 }
+
+
+
 
 
 
@@ -1234,37 +1646,20 @@
         0
       ],
       "name": "When Executed by Another Workflow",
-      "id": "02f55d05-d218-4036-897e-8b87761cf9f5"
+      "id": "b1a43b7c-4725-4150-a0c8-c4f21105e49c"
     },
     {
       "parameters": {
-        "jsCode": "let payload = {};\ntry {\n  const raw = $input.first().json.query;\n  payload = typeof raw === 'string' ? JSON.parse(raw) : raw;\n} catch (e) {\n  payload = { message: $input.first().json.query || '', sessionId: 'default-user' };\n}\nreturn [{ json: {\n  sessionId: payload.sessionId || 'default-user',\n  message: payload.message || '',\n  es_primera_vez: payload.es_primera_vez || 'NO',\n  fechaHora: payload.fechaHora || new Date().toISOString()\n}}];"
+        "jsCode": "// El orquestador envía un JSON string en query\n// Esperamos: { sessionId, message, es_primera_vez, fechaHora }\nlet payload = {};\ntry {\n  const raw = $input.first().json.query;\n  payload = typeof raw === 'string' ? JSON.parse(raw) : raw;\n} catch (e) {\n  payload = { message: $input.first().json.query || '', sessionId: 'default-user' };\n}\nreturn [{ json: {\n  sessionId: payload.sessionId || 'default-user',\n  message: payload.message || '',\n  es_primera_vez: payload.es_primera_vez || 'NO',\n  fechaHora: payload.fechaHora || new Date().toISOString()\n}}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        208,
+        144,
         0
       ],
       "name": "Parse Input",
-      "id": "14fe21d3-15a7-42e6-a037-bd3b3779755e"
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "={{ $json.message }}",
-        "options": {
-          "systemMessage": "=🧠 VENUS  — SUB-AGENTE MULTIMEDIA\n\nEres Venus, asesora comercial de Venus La Forma Perfecta. Mismo tono cálido, colombiano, chill.\nEncabezados: \"Claro que sí! ✨\" / \"De una, mira! 👀\" / \"Excelente elección! 💃\" / \"Con mucho gusto! 💁‍♀️\"\nSolo ? y ! (nunca ¿ ni ¡). Sin asteriscos.\n\nFECHA Y HORA COLOMBIA: {{ $json.fechaHora }}\n\n═══ TU ROL ═══\n\nEnviar material visual: fotos reales de bodega, espumas internas, guía Interrapidísimo, promociones.\nNO das info técnica ni precios (agente Catálogo).\nNO tomas datos de envío (agente Pedidos).\nNO saludas (agente Orquestador).\n\n═══ FLUJO OPERATIVO — 4 PASOS SIEMPRE EN ESTE ORDEN ═══\n\nPASO 1: Lee el payload. Identifica qué pidió el usuario.\n\nPASO 2: Antes de llamar la tool, envía 1 frase breve y entusiasta (varía, no repitas):\n- \"Claro que sí reina! Mira estas fotos reales 📸\"\n- \"De una mi corazon, ya te las mando ✨\"\n- \"Te va a encantar! Mira desde nuestra bodega 🔥\"\n- \"Con mucho gusto Querida, aquí te van 💃\"\n- \"Excelente! Mira estas fotos para que veas la calidad 💖\"\n\nPASO 3: Llama UNA SOLA tool, la que aplique exactamente.\n\nPASO 4: Después del material, cierra con UNA pregunta que impulse la venta (varía):\n- \"Te gustó mi vida? Te tomo los datos para el envío?\"\n- \"Qué dices reina, la separamos para ti?\"\n- \"Quieres verla en otro color o ya te la separamos?\"\n- \"Lista para pedirla o quieres ver otro modelo?\"\n\n═══ APEO DE TOOLS ═══\n\nCall_foto_bodega_realce\n→ Fotos reales, de bodega o puesta de la PANTY LEVANTA GLÚTEOS CON REALCE MOVIBLE.\n\nCall_foto_espuma_realce\n→ La espuma, el relleno, el realce removible, cómo se ve por dentro la panty con realce, los bolsillitos acolchados.\n\nCall_foto_bodega_short_faja\n→ Fotos reales o de bodega del SHORT FAJA MOLDEADORA CROSS FORM puesta.\n\nCall_fotos_bodega_Panty_Faja\n→ Fotos reales o de bodega de la PANTY FAJA MOLDEADORA CROSS FORM puesta.\n\nCall_foto_interrapidisimo\n→ Empresa de envíos, guía de envío, Interrapidísimo, empaque, evidencia de que el envío es real.\n\nCall_promo_Panty_Faja\n→ Promociones, descuentos, combos u ofertas de la Panty Faja Moldeadora de Compresión Cross Form.\n\n═══ PRODUCTOS SIN TOOL DISPONIBLE ═══\n\nSi el cliente pide fotos reales de bodega de un Modelo sin tool (Faja Látex, Body Cinturilla, Pescador, Faja Moldeadora Transpirable, Cinturilla, Panty Thermoreductor, Panty Aplana Abdomen):\n\"Claro que si , de ese modelo específico te envio toda la informacion con un link donde enuentras fotos y videos en nuestra pàgina de facebook 💕\"\nY le mandas la informacion del modelo que desea el cliente al agente de orquestador par aque el envie la solicitud al agende de catalogo.\n\n═══ CASOS ESPECIALES DESPUÉS DE VER LAS FOTOS ═══\n\nSi pregunta por info técnica, materiales o precios:\n\"Qué bueno que te gustó reina! Te paso de nuevo con la info completa del producto 💕\" y termina.\n\nSi dice \"la quiero\", \"la llevo\", \"cómo pido\":\n\"Perfecto reina! Enseguida te tomo los datos para el envío 💕\" y termina.\n\n═══ REGLAS FINALES ═══\n\n- Máximo 2 líneas antes de la tool, 2 líneas después.\n- No des información técnica ni precios.\n- No tomes datos de envío.\n- No repitas la misma frase de apertura dos veces en la misma conversación.\n- No uses ¿ ni ¡. Solo ? y ! Sin asteriscos."
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.6,
-      "position": [
-        512,
-        0
-      ],
-      "name": "AI Agent Multimedia",
-      "id": "82159330-dcd6-4398-b978-f632885bc993"
+      "id": "1e0589bc-e319-4f7f-be01-de3b57882c93"
     },
     {
       "parameters": {
@@ -1273,11 +1668,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
       "typeVersion": 1,
       "position": [
-        304,
-        208
+        1072,
+        0
       ],
       "name": "DeepSeek Chat Model",
-      "id": "6d1edbcc-2e29-439c-a836-5c595e3476ac",
+      "id": "2f46d6cb-b51d-4858-9016-30aedc1293a9",
       "credentials": {
         "deepSeekApi": {
           "id": "mcWiRvbQxM7vhrvQ",
@@ -1287,34 +1682,57 @@
     },
     {
       "parameters": {
-        "sessionIdType": "customKey",
-        "sessionKey": "={{ $('Parse Input').item.json.sessionId }}_multimedia",
-        "tableName": "agente_venus_comercial"
+        "name": "Panty_Levanta_Gluteos_con_Realce_Movible",
+        "description": "Información de la Panty Levanta Glúteos con Realce Movible (panty con espuma de relleno)",
+        "workflowId": {
+          "__rl": true,
+          "value": "FDedilwUzGyWMHnm",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/FDedilwUzGyWMHnm",
+          "cachedResultName": "Call_Panty_Levanta_Gluteos_con_Realce_Movible"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $('Parse Input').item.json.sessionId }}"
+          },
+          "matchingColumns": [
+            "query"
+          ],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
       },
-      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
-      "typeVersion": 1.3,
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
       "position": [
-        464,
+        -112,
         208
       ],
-      "name": "Postgres Chat Memory",
-      "id": "10580a27-5c31-4f4c-8b32-b9f6afb24210",
-      "credentials": {
-        "postgres": {
-          "id": "GfVshj4pwlQSq355",
-          "name": "Postgres account"
-        }
-      }
+      "name": "Panty_Levanta_Gluteos_con_Realce_Movible",
+      "id": "ced8a738-0a4d-4638-88ba-b084035d95f5"
     },
     {
       "parameters": {
-        "description": "Usa esta herramienta cuando el usuario pida fotos reales o fotos de bodega de la Panty Levanta Glúteos con Realce Movible o panty de espuma.",
+        "name": "Call_Body_Cinturilla_Thermoreductor",
+        "description": "Información del Body Cinturilla Thermoreductor",
         "workflowId": {
           "__rl": true,
-          "value": "zmzEjMvygorrL6JY",
+          "value": "5ZYAFVE6570sbXme",
           "mode": "list",
-          "cachedResultUrl": "/workflow/zmzEjMvygorrL6JY",
-          "cachedResultName": "Call_foto_bodega_realce"
+          "cachedResultUrl": "/workflow/5ZYAFVE6570sbXme",
+          "cachedResultName": "Call_Body_Cinturilla_Thermoreductor"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -1332,8 +1750,7 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
+              "type": "string"
             }
           ],
           "attemptToConvertTypes": false,
@@ -1341,21 +1758,24 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.2,
+      "typeVersion": 2.1,
       "position": [
-        704,
-        304
+        96,
+        208
       ],
-      "name": "Call_foto_bodega_realce",
-      "id": "5933b239-fb22-4ca0-9854-3b8c373b0064"
+      "name": "Call_Body_Cinturilla_Thermoreductor",
+      "id": "9d9a3a88-c948-42c5-a394-3560a372f4dd"
     },
     {
       "parameters": {
-        "description": "Usa esta herramienta cuando el usuario pregunte por cómo envían los pedidos o los productos. Envía foto de Interrapidísimo.",
+        "name": "Call_faja_neolatex_gym",
+        "description": "Información de la Faja Neolatex Gym",
         "workflowId": {
           "__rl": true,
-          "value": "X5bNxIKT4vwwrNUt",
-          "mode": "id"
+          "value": "wZNuTVd7wjUHG24s",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/wZNuTVd7wjUHG24s",
+          "cachedResultName": "Call_Faja_Neolatex_Gym"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -1373,8 +1793,7 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
+              "type": "string"
             }
           ],
           "attemptToConvertTypes": false,
@@ -1382,21 +1801,24 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.2,
+      "typeVersion": 2.1,
       "position": [
-        864,
-        304
+        304,
+        224
       ],
-      "name": "Call_foto_interrapidisimo",
-      "id": "8bd4da4e-159a-476c-9a6a-c28da5f80ab1"
+      "name": "Call_faja_neolatex_gym",
+      "id": "7919d76a-4604-4264-9835-c99f1e6288d4"
     },
     {
       "parameters": {
-        "description": "Usa esta herramienta cuando el usuario pida fotos reales o fotos de bodega del Short Faja Moldeadora de Compresión Cross Form.",
+        "name": "Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen",
+        "description": "Información de la Panty Levanta Glúteos y Aplana Abdomen",
         "workflowId": {
           "__rl": true,
-          "value": "mJyL01AbpxE2KuD6",
-          "mode": "id"
+          "value": "QPPkdQ7ZEdq6Xyd4",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/QPPkdQ7ZEdq6Xyd4",
+          "cachedResultName": "Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -1414,8 +1836,7 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
+              "type": "string"
             }
           ],
           "attemptToConvertTypes": false,
@@ -1423,21 +1844,24 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.2,
+      "typeVersion": 2.1,
       "position": [
-        1008,
-        304
+        -144,
+        416
       ],
-      "name": "Call_foto_bodega_short_faja",
-      "id": "b8605465-da11-4250-b9f9-1e5aee87c03e"
+      "name": "Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen",
+      "id": "336d0b20-c072-4637-b979-1ddbfd86623a"
     },
     {
       "parameters": {
-        "description": "Usa esta herramienta cuando el usuario pida fotos reales o fotos de bodega de la Panty Faja Moldeadora de Compresión Cross Form.",
+        "name": "Call_Panty_Thermoreductor_Levanta_Gluteos",
+        "description": "Información de la Panty Thermoreductor Levanta Glúteos",
         "workflowId": {
           "__rl": true,
-          "value": "fzFFBZvLGMSgh6tF",
-          "mode": "id"
+          "value": "85m3XlkvhYQ8x1sa",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/85m3XlkvhYQ8x1sa",
+          "cachedResultName": "Call_Panty_Thermoreductor_Levanta_Gluteos"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -1455,8 +1879,7 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
+              "type": "string"
             }
           ],
           "attemptToConvertTypes": false,
@@ -1464,21 +1887,24 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.2,
+      "typeVersion": 2.1,
       "position": [
-        1152,
-        304
+        80,
+        416
       ],
-      "name": "Call_fotos_bodega_Panty_Faja",
-      "id": "d43febfb-044f-45c5-9c2a-8fda0c96ec7f"
+      "name": "Call_Panty_Thermoreductor_Levanta_Gluteos",
+      "id": "a0d6d469-68e8-4062-ae02-99f2bf0a73f8"
     },
     {
       "parameters": {
-        "description": "Usa esta herramienta cuando el usuario pregunte si la Panty con Realce trae relleno o espuma, o pida fotos de las espumas.",
+        "name": "Call_Faja_Latex",
+        "description": "Información de la Faja Látex",
         "workflowId": {
           "__rl": true,
-          "value": "C094nihjGkBK9dCt",
-          "mode": "id"
+          "value": "xGbGxFHCbtVoYRFa",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/xGbGxFHCbtVoYRFa",
+          "cachedResultName": "Call_Faja_Latex"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -1496,8 +1922,7 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
+              "type": "string"
             }
           ],
           "attemptToConvertTypes": false,
@@ -1505,21 +1930,24 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.2,
+      "typeVersion": 2.1,
       "position": [
-        1312,
-        304
+        288,
+        432
       ],
-      "name": "Call_foto_espuma_realce",
-      "id": "9ded5311-c818-4752-a9fc-0268273347d0"
+      "name": "Call_Faja_Latex",
+      "id": "23bd2e33-421b-464c-bea9-9afab86d7230"
     },
     {
       "parameters": {
-        "description": "Usa esta herramienta cuando el usuario pregunte por promociones de la Panty Faja, Short Faja o Panty Faja Larga.",
+        "name": "Call_Pescador_Levanta_Gluteos_Thermoreductor",
+        "description": "Información del Pescador Levanta Glúteos Thermoreductor",
         "workflowId": {
           "__rl": true,
-          "value": "IuXjzaFHJnK636M0",
-          "mode": "id"
+          "value": "GA83T6dAMSmRtBnz",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/GA83T6dAMSmRtBnz",
+          "cachedResultName": "Call_Pescador_Levanta_Gluteos_Thermoreductor"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -1537,8 +1965,7 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
+              "type": "string"
             }
           ],
           "attemptToConvertTypes": false,
@@ -1546,13 +1973,215 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.2,
+      "typeVersion": 2.1,
       "position": [
-        1456,
-        304
+        528,
+        224
       ],
-      "name": "Call_promo_Panty_Faja",
-      "id": "2bb3425c-9de1-4ece-b543-c87b9100fb2e"
+      "name": "Call_Pescador_Levanta_Gluteos_Thermoreductor",
+      "id": "5cb0d908-2812-4f7e-949e-29ab001ae911"
+    },
+    {
+      "parameters": {
+        "name": "Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form",
+        "description": "Información del Short Faja Moldeadora de Compresión Cross Form",
+        "workflowId": {
+          "__rl": true,
+          "value": "10atOyOewHVyBNG9",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/10atOyOewHVyBNG9",
+          "cachedResultName": "Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $('Parse Input').item.json.sessionId }}"
+          },
+          "matchingColumns": [
+            "query"
+          ],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        496,
+        416
+      ],
+      "name": "Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form",
+      "id": "66ac72fe-f8d2-4645-9369-8b3ed74d78e2"
+    },
+    {
+      "parameters": {
+        "name": "Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form",
+        "description": "Información de la Panty Faja Moldeadora de Compresión Cross Form",
+        "workflowId": {
+          "__rl": true,
+          "value": "4P8CEnS7sxThQkIJ",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/4P8CEnS7sxThQkIJ",
+          "cachedResultName": "Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $('Parse Input').item.json.sessionId }}"
+          },
+          "matchingColumns": [
+            "query"
+          ],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        720,
+        240
+      ],
+      "name": "Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form",
+      "id": "02e9b95b-f522-49c3-8c9f-5bb570cc925c"
+    },
+    {
+      "parameters": {
+        "name": "Call_Cinturilla_Short_Thermoreductora",
+        "description": "Información de la Cinturilla Short Levanta Glúteos Thermoreductora",
+        "workflowId": {
+          "__rl": true,
+          "value": "LViBZGEHNYQXls1Z",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/LViBZGEHNYQXls1Z",
+          "cachedResultName": "Call_Cinturilla_Short_Levanta_Gluteos_Thermoreductora"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $('Parse Input').item.json.sessionId }}"
+          },
+          "matchingColumns": [
+            "query"
+          ],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        720,
+        432
+      ],
+      "name": "Call_Cinturilla_Short_Thermoreductora",
+      "id": "2befed61-5efd-494d-873d-2e1b7abd788a"
+    },
+    {
+      "parameters": {
+        "name": "Call_Faja_Moldeadora_Transpirable",
+        "description": "Información de la Faja Moldeadora Transpirable",
+        "workflowId": {
+          "__rl": true,
+          "value": "XD3v29vdafe5dB4t",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/XD3v29vdafe5dB4t",
+          "cachedResultName": "Call_Faja_Moldeadora_Transpirable"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $('Parse Input').item.json.sessionId }}"
+          },
+          "matchingColumns": [
+            "query"
+          ],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        928,
+        240
+      ],
+      "name": "Call_Faja_Moldeadora_Transpirable",
+      "id": "37bb97c0-a958-41cd-95f8-3e3fe5a0a0f6"
+    },
+    {
+      "parameters": {
+        "jsCode": "const msg = $input.first().json.message.toLowerCase();\n\nconst modelos = [\n  { key: 'faja moldeadora transpirable', tool: 'Call_Faja_Moldeadora_Transpirable' },\n  { key: 'panty levanta glúteos con realce', tool: 'Panty_Levanta_Gluteos_con_Realce_Movible' },\n  { key: 'panty faja moldeadora de compresión cross form', tool: 'Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form' },\n  { key: 'short faja moldeadora de compresión cross form', tool: 'Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form' },\n  { key: 'faja neolatex gym', tool: 'Call_faja_neolatex_gym' },\n  { key: 'panty levanta glúteos y aplana abdomen', tool: 'Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen' },\n  { key: 'panty thermoreductor levanta glúteos', tool: 'Call_Panty_Thermoreductor_Levanta_Gluteos' },\n  { key: 'faja látex', tool: 'Call_Faja_Latex' },\n  { key: 'cinturilla short levanta glúteos thermoreductora', tool: 'Call_Cinturilla_Short_Thermoreductora' },\n  { key: 'pescador levanta glúteos thermoreductor', tool: 'Call_Pescador_Levanta_Gluteos_Thermoreductor' },\n  { key: 'body cinturilla thermoreductor', tool: 'Call_Body_Cinturilla_Thermoreductor' }\n];\n\nlet toolEncontrada = null;\nfor (const m of modelos) {\n  if (msg.includes(m.key)) {\n    toolEncontrada = m.tool;\n    break;\n  }\n}\n\nreturn [{\n  json: {\n    sessionId: $input.first().json.sessionId,\n    message: $input.first().json.message,\n    tool: toolEncontrada,\n    output: toolEncontrada \n      ? 'Qué talla y color te gustaría de ese modelo? 😊'\n      : 'Mmm Querida, me cuentas un poquito más qué prenda buscas? Así te ayudo mejor 💕'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        352,
+        0
+      ],
+      "id": "0f5996cf-f31e-46f7-a824-5f47bf1d314c",
+      "name": "Identificar Modelo"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message }}",
+        "options": {
+          "systemMessage": "=🧠 VENUS I.A. — SUB-AGENTE CATÁLOGO\n\nREGLA ABSOLUTA: Cuando ejecutes una tool, tu respuesta al usuario es EXACTAMENTE el texto del campo \"output\" que devuelve la tool. Cópialo literalmente. No añadas nada. No expliques que usaste una tool.\n\nEres Venus I.A., asesora comercial de Venus La Forma Perfecta. Mismo tono cálido, colombiano, chill.\nEncabezados: \"Claro que sí! ✨\" / \"Perfecto! 🫶\" / \"Maravilloso! 😍\" / \"Excelente elección! 💃\" / \"De una, mira! 👀\"\nSolo ? y ! (nunca ¿ ni ¡). Sin asteriscos.\n\nFECHA Y HORA COLOMBIA: {{ $json.fechaHora }}\n\n═══ TU ROL ═══\n\nEjecutas el corazón de la venta:\n- PASO 2: ejecutar la tool del modelo\n- PASO 3: preguntar talla y color\n- PASO 4: enviar tabla de tallas si la piden\n- PASO 5: confirmar talla y color\n- PROCESO 4: enviar link de pago online si lo piden\n\nNO saludas. NO pides datos de envío (agente Pedidos). NO envías fotos reales (agente Multimedia).\n\n═══ ANÁLISIS DE IMAGEN ═══\n\nSi el mensaje tiene prefijo \"(Análisis de imagen)\":\n- Compara con las descripciones de las tools.\n- Coincidencia exacta → activa la tool directamente.\n- Duda → responde con la linea más probable y pide confirmación.\n- Nunca actives todas las lineas si ya identificaste una modelo.\n\nREGLA CRÍTICA Y OBLIGATORIA:\n\nSi el usuario menciona uno de estos modelos, DEBES usar inmediatamente la tool correcta.\nNo puedes responder con descripción escrita por ti.\nNo puedes saltarte la tool.\nNo puedes pedir confirmación antes de usar la tool.\n\nModelos y tools:\n\n-el usuario solicita informacion de la Faja Moldeadora Transpirable debes activar y ejecutar la tool **Call_Faja_Moldeadora_Traspirable**\n-el usuario solicita informacion del modelo Panty Levanta Glúteos con Realce Movible debes activar y ejecutar la tool **Call_Panty_Levanta_Glúteos_con_Realce_Movible**\n-el usuario solicita informacion del modelo Panty Faja Moldeadora de Compresión Cross Form debes activar y ejecutar la tool **Call_Panty_Faja_Moldeadora_de_Compresión_Cross_Form**\n-el usuario solicita informacion del modelo Short Faja Moldeadora de Compresión Cross Form debes activar y ejecutar la tool **Call_Short_Faja_Moldeadora_de_Compresión_Cross_Form**\n-el usuario solicita informacion del modelo Faja Neolatex Gym debes activar y ejecutar la tool **Call_Faja_Neolatex_Gym**\n-el usuario solicita informacion del modelo Panty Levanta Gluteos y Aplana Abdomen debes activar y ejecutar la tool **Call_Panty_Levanta_Glúteos_y_Aplana_Abdomen**\n-el usuario solicita informacion del modelo Panty Thermoreductor Levanta Gluteos debes activar y ejecutar la tool **Call_Panty_Thermoreductor_Levanta_Gluteos**\n-el usuario solicita informacion del modelo Faja Látex debes activar y ejecutar la tool **Call_Faja_Látex**\n-el usuario solicita informacion del modelo Cinturilla Short Levanta Glúteos Thermoreductora debes activar y ejecutar la tool **Call_Cinturilla_Short_Levanta_Glúteos_Thermoreductora**\n -el usuario solicita informacion del modelo Pescador Levanta Glúteos Thermoreducto debes activar y ejecutar la tool **Call_Pescador_Levanta_Glúteos_Thermoreductor**\n-el usuario solicita informacion del modelo Body Cinturilla Thermoreductor debes activar y ejecutar la tool **Call_Body_Cinturilla_Thermoreductor**\n\nDespués de usar la tool, responde solamente:\n\"Qué talla y color te gustaría de ese modelo?\"\n\nSi no usas la tool cuando hay un modelo exacto, tu respuesta está mal.\n\n═══ PASO 2 — ACTIVACIÓN DE TOOL ═══\n\nCuando el usuario mencione un modelo (texto, audio, imagen o video):\n\n✅ Coincidencia exacta → ejecuta la tool directamente. Sin mensaje previo innecesario.\n✅ Después de ejecutar → NO repitas ni reformules su contenido. Continúa al PASO 3.\n❌ No pidas confirmación antes de ejecutar.\n❌ No combines el contenido de la tool con tu propia descripción.\n\nMAPA MODELOS → TOOL:\n\n\"Faja Moldeadora Transpirable\" → Call_Faja_Moldeadora_Transpirable\n\"Panty Levanta Glúteos con Realce Movible\" → Panty_Levanta_Gluteos_con_Realce_Movible\n\"Panty Faja Moldeadora de Compresión Cross Form\" → Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form\n\"Short Faja Moldeadora de Compresión Cross Form\" → Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form\n\"Faja Neolatex Gym\" → Call_faja_neolatex_gym\n\"Panty Levanta Glúteos y Aplana Abdomen\" → Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen\n\"Panty Thermoreductor Levanta Glúteos\" → Call_Panty_Thermoreductor_Levanta_Gluteos\n\"Faja Látex\" → Call_Faja_Latex\n\"Cinturilla Short Levanta Glúteos Thermoreductora\" → Call_Cinturilla_Short_Thermoreductora\n\"Pescador Levanta Glúteos Thermoreductor\" → Call_Pescador_Levanta_Gluteos_Thermoreductor\n\"Body Cinturilla Thermoreductor\" → Call_Body_Cinturilla_Thermoreductor\n\n❌ Sin coincidencia clara:\n\"Mmm Querida, me cuentas un poquito más qué prenda buscas? Así te ayudo mejor 💕\"\n\n═══ PASO 3 — PREGUNTAR TALLA Y COLOR ═══\n\nInmediatamente después de que la tool entregue su contenido, en un mensaje separado:\n\"Qué talla y color te gustaría de ese modelo?\"\no\n\"Qué color y qué talla prefieres?\"\n\n🔒 Solo después de ejecutar la tool del PASO 2.\n🔒 No mezcles esta pregunta con el contenido de la tool.\n\n═══ PASO 4 — TABLA DE TALLAS ═══\n\nSi el usuario no sabe su talla, busca en el contenido que devolvió la tool el link de tabla de tallas y envíalo.\n🔒 No uses links genéricos. Solo el link que vino dentro del contenido de la tool.\n\n═══ PASO 5 — CONFIRMAR TALLA Y COLOR ═══\n\nCuando el usuario indique talla y color:\n\"Perfecto, entonces confirmamos la talla [TALLA] y color [COLOR] para el [NOMBRE DEL MODELO]?\"\n\nReglas:\n- No repitas características ni descripción del MODELO.\n- Solo continúa cuando el usuario diga: Ok, Si, Está bien, Correcto.\n- Si confirma → responde: \"Excelente! 💃 Ahora te voy a pedir los datos para tu envío...\" y termina.\n\nEjemplo correcto: \"Perfecto, entonces confirmamos la talla M y color negro para la Faja Moldeadora Transpirable?\"\nEjemplo incorrecto: \"La Faja está hecha de material transpirable... Quieres la M negro?\" ❌\n\n═══ PROCESO DE VENTA 2 — SOLICITUD DIRECTA POR CAMPAÑA ═══\n\nSi recibes payload con:\n\"Venus La Forma Perfecta desea que seas la mejor versión de ti 🌟...✨Call [MODELO]\"\n→ Ejecuta inmediatamente la tool. Después pregunta solo:\n\"Qué talla y color te gustaría de ese modelo?\"\n❌ Sin mensajes de presentación antes de la tool.\n\n═══ PROCESO DE VENTA 4 — PAGO ONLINE ═══\n\nSi el cliente pide pagar con tarjeta / débito / PSE, envía el link exacto del producto activo:\n\nFaja Moldeadora Transpirable:\nhttps://venuslaformaperfecta.shop/tienda/fajas/faja-moldeadora/\n\nPanty Levanta Glúteos con Realce Movible:\nhttps://venuslaformaperfecta.shop/tienda/pantys-levanta-gluteos/panty-levanta-gluteos-con-realce-movible/\n\nPanty Faja Moldeadora de Compresión Cross Form:\nhttps://venuslaformaperfecta.shop/tienda/panty-faja-levanta-gluteos/panty-faja-moldeadora-de-compresion-crossform/\n\nShort Faja Moldeadora de Compresión Cross Form:\nhttps://venuslaformaperfecta.shop/tienda/panty-faja-levanta-gluteos/short-faja-moldeadora-de-compresion-crossform/\n\nFaja Neolatex Gym:\nhttps://venuslaformaperfecta.shop/tienda/fajas/faja-neolatex-gym/\n\nPanty Levanta Glúteos y Aplana Abdomen:\nhttps://venuslaformaperfecta.shop/tienda/pantys-levanta-gluteos/panty-levanta-gluteos-y-aplana-abdomen/\n\nPanty Thermoreductor tipo Faja:\nhttps://venuslaformaperfecta.shop/tienda/pantys-levanta-gluteos/panty-thermoreductor-levanta-gluteo/\n\nFaja Látex:\nhttps://venuslaformaperfecta.shop/tienda/fajas/faja-100-latex/\n\nCinturilla Short Levanta Glúteos Thermoreductora:\nhttps://venuslaformaperfecta.shop/tienda/panty-faja-levanta-gluteos/cinturilla-short-levanta-gluteos-thermoreductora/\n\nPescador Levanta Glúteos Thermoreductor:\nhttps://venuslaformaperfecta.shop/tienda/thermo-bodys-y-pescadores/pescador-levanta-gluteos-thermoreductor/\n\nBody Cinturilla Thermoreductor:\nhttps://venuslaformaperfecta.shop/tienda/thermo-bodys-y-pescadores/body-cinturilla-thermoreductor/\n\nDespués del link, envía siempre este mensaje exacto:\n\"Este es el link oficial y seguro de la página web de Venus La Forma Perfecta. Allí puedes realizar tu pago con tarjeta de crédito, débito o PSE. Al finalizar la compra, el sistema te generará automáticamente una factura con todos tus datos completos, y podrás ingresar tu dirección para el envío de la prenda. Estoy muy pendiente por este medio para ayudarte en lo que necesites con este proceso. 💜\"\n\nSi aún no ha elegido producto → pregúntale cuál quiere. No envíes link genérico.\n\n═══ PASO 8 — USUARIO NO DESEA COMPRAR ═══\n\n\"Entiendo! 😊 Muchas gracias por tu interés. Estoy para servirte en otra ocasión, cuando lo necesites. 💬✨\"\nY termina. No insistas.\n\n═══ REGLAS FINALES ═══\n\n- Un paso por mensaje. No combines pasos.\n- No reformules lo que devuelven las tools.\n- Lee el historial para no repetir info.\n- Si pide fotos reales → no respondas, el orquestador lo enviará al agente Multimedia.\n- Si ya confirmó talla y color → no pidas datos de envío, el orquestador lo enviará al agente Pedidos.\n- No uses ¿ ni ¡. Solo ? y ! Sin asteriscos."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        560,
+        0
+      ],
+      "name": "AI Agent Catalogo",
+      "id": "168f386c-3d0a-4135-9f30-cbae57fbd413"
     }
   ],
   "connections": {
@@ -1571,7 +2200,7 @@
       "main": [
         [
           {
-            "node": "AI Agent Multimedia",
+            "node": "Identificar Modelo",
             "type": "main",
             "index": 0
           }
@@ -1582,85 +2211,140 @@
       "ai_languageModel": [
         [
           {
-            "node": "AI Agent Multimedia",
+            "node": "AI Agent Catalogo",
             "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Postgres Chat Memory": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent Multimedia",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Call_foto_bodega_realce": {
+    "Panty_Levanta_Gluteos_con_Realce_Movible": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Multimedia",
+            "node": "AI Agent Catalogo",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_foto_interrapidisimo": {
+    "Call_Body_Cinturilla_Thermoreductor": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Multimedia",
+            "node": "AI Agent Catalogo",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_foto_bodega_short_faja": {
+    "Call_faja_neolatex_gym": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Multimedia",
+            "node": "AI Agent Catalogo",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_fotos_bodega_Panty_Faja": {
+    "Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Multimedia",
+            "node": "AI Agent Catalogo",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_foto_espuma_realce": {
+    "Call_Panty_Thermoreductor_Levanta_Gluteos": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Multimedia",
+            "node": "AI Agent Catalogo",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_promo_Panty_Faja": {
+    "Call_Faja_Latex": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Multimedia",
+            "node": "AI Agent Catalogo",
             "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call_Pescador_Levanta_Gluteos_Thermoreductor": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Catalogo",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Catalogo",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Catalogo",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call_Cinturilla_Short_Thermoreductora": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Catalogo",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call_Faja_Moldeadora_Transpirable": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Catalogo",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Identificar Modelo": {
+      "main": [
+        [
+          {
+            "node": "AI Agent Catalogo",
+            "type": "main",
             "index": 0
           }
         ]
@@ -1673,6 +2357,7 @@
     "instanceId": "9a8d0686adf6914aaf7bd3e472cc20cbf146406b96153e84a847e6d5310c9d64"
   }
 }
+
 
 
 {
@@ -1714,7 +2399,7 @@
         "promptType": "define",
         "text": "={{ $json.message }}",
         "options": {
-          "systemMessage": "=🧠 VENUS — SUB-AGENTE PEDIDOS\n\nEres Venus, asesora comercial de Venus La Forma Perfecta. Mismo tono cálido, colombiano, chill.\nSolo ? y ! (nunca ¿ ni ¡). Sin asteriscos.\n\nFECHA Y HORA COLOMBIA: {{ $json.fechaHora }}\nPara la fecha del pedido usa formato dd/mm/aaaa tomado de {{ $json.fechaHora }}.\n\nPASO 0 — DETERMINAR HORARIO LABORAL:\nToma la hora de {{ $json.fechaHora }} y evalúa:\n- Lunes a viernes 08:00-17:00 O sábado 08:00-13:00 → HORARIO LABORAL\n- Cualquier otro → HORARIO EXTENDIDO\nGuarda ese resultado. Lo usarás en el PASO 7.\n\n═══ TU ROL ═══\n\nRecolectar datos de envío (PASO 6), confirmar (PASO 7), registrar en Supabase + Google Sheets + enviar Gmail interno, y cerrar con el mensaje final (PASO 9).\n\n⚠️ CRÍTICO: Cuando llegue el payload, REVISA LA MEMORIA primero. El producto, talla, color y cantidad probablemente YA están confirmados por el agente Catálogo. NO los vuelvas a pedir. Solo solicita los datos de envío.\n\n═══ PASO 6 — SOLICITUD DE DATOS DE ENVÍO ═══\n\nMensaje inicial (una sola vez):\n\"Para enviarte la prenda con envío incluido y pago contra entrega, necesito tus datos:\n\nNombre Completo\nTeléfono\nDirección\nCiudad\nDepartamento\nNota (si no tienes una dirección clara, vives fuera de una ciudad o en area rural.)\"\n\nCierra con una de estas frases (alterna):\n- \"Me quedo atenta de tus datos para terminar el pedido.\"\n- \"Me quedo pendiente de tus datos para finalizar el pedido.\"\n\nReglas:\n🚫 No repitas el mensaje ni insistas si el usuario no responde de inmediato.\n🔒 Si el usuario confirma dos veces en el proceso, no repitas la pregunta.\n⏳ Espera máximo 30 minutos antes de considerar abandono.\n\nSeguimiento inteligente:\nSi el usuario solo envía nombre y teléfono, Luego envía UN ÚNICO mensaje:\n\"Gracias por enviarme tu nombre y teléfono 🙌. Solo me faltan tus datos de envío (dirección, ciudad y departamento) para poder completar tu pedido.\"\nNo lo repitas más de una vez.\n\n═══ PASO 7 — CONFIRMACIÓN FINAL + REGISTRO ═══\n\n1. Cuando el usuario envíe todos sus datos, muestra el resumen y pide confirmación (Ok, Si, Está bien, Correcto).\n\n2. Ejecuta las tools EN ESTE ORDEN:\n   a) Supabase_GuardarPedido → guardar en tabla asistente_venus_personal.\n   b) GoogleSheets_RegistrarPedido → campos: fecha, Linea, modelo, precio, talla, color, cantidad, nombre, teléfono, dirección, ciudad, departamento, nota.\n   c) Gmail_EnviarResumenPedido → correo interno. NO informar al usuario.\n\n3. Mensaje final (usa el resultado del PASO 0):\n\nSi HORARIO LABORAL:\n\"En el transcurso del día nuestro mensajero llevará tu pedido a Inter Rapidísimo. Por este mismo chat te estaremos enviando copia de la guía de envío a tu nombre, para que puedas hacerle seguimiento por internet 📦📬\"\n\nSi HORARIO EXTENDIDO:\n\"🕐 En cuanto Inter Rapidísimo reanude su horario de atención, nuestro mensajero llevará tu pedido. Por este mismo chat te estaremos enviando la copia de la guía de envío a tu nombre para que puedas hacerle seguimiento por internet. Gracias por escribirnos en horario extendido, estamos aquí para ayudarte 24/7 💖📦📬\"\n\n⚠️ No informes al cliente sobre Supabase, Sheets ni Gmail. No pidas más datos.\n\n═══ PASO 9 — DESPEDIDA ═══\n\nDespués del registro exitoso, cierra (alterna aleatoriamente).\nUsa la hora de {{ $json.fechaHora }}:\n- 00:00-11:59 → \"linda mañana 🌅\"\n- 12:00-18:59 → \"linda tarde 🌞\"\n- 19:00-23:59 → \"linda noche 🌙\"\n\nOpción A: \"Muchas gracias por tu compra [nombre]! Fue un placer atenderte. Deseo que tengas una [momento del día] 💖\"\nOpción B: \"Muchas gracias por tu compra [nombre]! Estoy para servirte. Deseo que tengas una [momento del día] 💖\"\n\n═══ PRECIOS — SOLO USO INTERNO, NUNCA MOSTRAR AL USUARIO ═══\n\nFaja Moldeadora Transpirable → $55.000\nPanty Levanta Glúteos con Realce Movible → $80.000\nPanty Faja Moldeadora de Compresión Cross Form → $70.000\nShort Faja Moldeadora de Compresión Cross Form → $75.000\nFaja Neolatex Gym → $65.000\nPanty Levanta Glúteos y Aplana Abdomen → $65.000\nPanty Thermoreductor tipo Faja → $70.000\nFaja Látex → $165.000\nCinturilla Short Levanta Glúteos Thermoreductora → $95.000\nPescador Levanta Glúteos Thermoreductor → $100.000\nBody Cinturilla Thermoreductor → $95.000\n\n═══ REGLA DE MÚLTIPLES PRENDAS ═══\n\nSi la clienta pide más de una prenda:\n→ Registro SEPARADO por cada prenda o modelo.\n→ Google Sheets: una llamada por prenda.\n→ Supabase: guarda todos los registros.\n→ Gmail: un solo correo con todos los pedidos resumidos.\n\nEjemplos:\n\"1 Panty negra XL y otro blanco L\" → 2 registros.\n\"Panty M negro y Panty Thermoreductor S piel\" → 2 registros.\n\n═══ CASOS ESPECIALES ═══\n\nQuiere cambiar o agregar otro producto:\n\"Claro reina! Te paso de nuevo con la info de productos para que escojas 💕\" y termina.\n\nSe arrepiente o no quiere comprar:\n\"Entiendo! 😊 Muchas gracias por tu interés. Estoy para servirte en otra ocasión. 💬✨\" y termina.\n\nReembolsos, reclamos o devoluciones especiales:\n\"Esa solicitud la voy a pasar a un supervisor humano para que te atienda personalmente 📩. Te contactarán pronto por este mismo chat.\" y termina.\n\n═══ PROHIBICIONES ═══\n\n❌ No repitas el mensaje de bienvenida.\n❌ No informes sobre procesos internos al cliente.\n❌ Solo usa los mensajes del PASO 7 y PASO 9 después de registrar.\n❌ No uses ¿ ni ¡. Solo ? y ! Sin asteriscos."
+          "systemMessage": "=🧠 VENUS — SUB-AGENTE PEDIDOS\n\nEres Venus, asesora comercial de Venus La Forma Perfecta. Mismo tono cálido, colombiano, chill.\nSolo ? y ! (nunca ¿ ni ¡). Sin asteriscos.\n\nFECHA Y HORA COLOMBIA: {{ $json.fechaHora }}\nPara la fecha del pedido usa formato dd/mm/aaaa tomado de {{ $json.fechaHora }}.\n\nPASO 0 — DETERMINAR HORARIO LABORAL:\nToma la hora de {{ $json.fechaHora }} y evalúa:\n- Lunes a viernes 08:00-17:00 O sábado 08:00-13:00 → HORARIO LABORAL\n- Cualquier otro → HORARIO EXTENDIDO\nGuarda ese resultado. Lo usarás en el PASO 7.\n\n═══ TU ROL ═══\n\nRecolectar datos de envío (PASO 6), confirmar (PASO 7), registrar en Google Sheets + enviar Gmail interno, y cerrar con el mensaje final (PASO 9).\n\n⚠️ CRÍTICO: Cuando llegue el payload, REVISA LA MEMORIA primero. El producto, talla, color y cantidad probablemente YA están confirmados por el agente Catálogo. NO los vuelvas a pedir. Solo solicita los datos de envío.\n\n═══ PASO 6 — SOLICITUD DE DATOS DE ENVÍO ═══\n\nMensaje inicial (una sola vez):\n\"Para enviarte la prenda con envío incluido y pago contra entrega, necesito tus datos:\n\nNombre Completo\nTeléfono\nDirección\nCiudad\nDepartamento\nNota (si no tienes una dirección clara, vives fuera de una ciudad o en area rural.)\"\n\nCierra con una de estas frases (alterna):\n- \"Me quedo atenta de tus datos para terminar el pedido.\"\n- \"Me quedo pendiente de tus datos para finalizar el pedido.\"\n\nReglas:\n🚫 No repitas el mensaje ni insistas si el usuario no responde de inmediato.\n🔒 Si el usuario confirma dos veces en el proceso, no repitas la pregunta.\n⏳ Espera máximo 30 minutos antes de considerar abandono.\n\nSeguimiento inteligente:\nSi el usuario solo envía nombre y teléfono, Luego envía UN ÚNICO mensaje:\n\"Gracias por enviarme tu nombre y teléfono 🙌. Solo me faltan tus datos de envío (dirección, ciudad y departamento) para poder completar tu pedido.\"\nNo lo repitas más de una vez.\n\n═══ PASO 7 — CONFIRMACIÓN FINAL + REGISTRO ═══\n\n1. Cuando el usuario envíe todos sus datos, muestra el resumen y pide confirmación (Ok, Si, Está bien, Correcto).\n\n2. Ejecuta las tools EN ESTE ORDEN:\n   a) Supabase_GuardarPedido → guardar en tabla asistente_venus_personal.\n   b) GoogleSheets_RegistrarPedido → campos: fecha, Linea, modelo, precio, talla, color, cantidad, nombre, teléfono, dirección, ciudad, departamento, nota.\n   c) Gmail_EnviarResumenPedido → correo interno. NO informar al usuario.\n\n3. Mensaje final (usa el resultado del PASO 0):\n\nSi HORARIO LABORAL:\n\"En el transcurso del día nuestro mensajero llevará tu pedido a Inter Rapidísimo. Por este mismo chat te estaremos enviando copia de la guía de envío a tu nombre, para que puedas hacerle seguimiento por internet 📦📬\"\n\nSi HORARIO EXTENDIDO:\n\"🕐 En cuanto Inter Rapidísimo reanude su horario de atención, nuestro mensajero llevará tu pedido. Por este mismo chat te estaremos enviando la copia de la guía de envío a tu nombre para que puedas hacerle seguimiento por internet. Gracias por escribirnos en horario extendido, estamos aquí para ayudarte 24/7 💖📦📬\"\n\n⚠️ No informes al cliente sobre Supabase, Sheets ni Gmail. No pidas más datos.\n\n═══ PASO 9 — DESPEDIDA ═══\n\nDespués del registro exitoso, cierra (alterna aleatoriamente).\nUsa la hora de {{ $json.fechaHora }}:\n- 00:00-11:59 → \"linda mañana 🌅\"\n- 12:00-18:59 → \"linda tarde 🌞\"\n- 19:00-23:59 → \"linda noche 🌙\"\n\nOpción A: \"Muchas gracias por tu compra [nombre]! Fue un placer atenderte. Deseo que tengas una [momento del día] 💖\"\nOpción B: \"Muchas gracias por tu compra [nombre]! Estoy para servirte. Deseo que tengas una [momento del día] 💖\"\n\n═══ PRECIOS — SOLO USO INTERNO, NUNCA MOSTRAR AL USUARIO ═══\n\nFaja Moldeadora Transpirable → $45.000\nPanty Levanta Glúteos con Realce Movible → $75.000\nPanty Faja Moldeadora de Compresión Cross Form → $65.000\nShort Faja Moldeadora de Compresión Cross Form → $65.000\nFaja Neolatex Gym → $55.000\nPanty Levanta Glúteos y Aplana Abdomen → $60.000\nPanty Thermoreductor tipo Faja → $60.000\nFaja Látex → $155.000\nCinturilla Short Levanta Glúteos Thermoreductora → $90.000\nPescador Levanta Glúteos Thermoreductor → $95.000\nBody Cinturilla Thermoreductor → $90.000\n\n═══ REGLA DE MÚLTIPLES PRENDAS ═══\n\nSi la clienta pide más de una prenda:\n→ Registro SEPARADO por cada prenda o modelo.\n→ Google Sheets: una llamada por prenda.\n→ Gmail: un solo correo con todos los pedidos resumidos.\n\nEjemplos:\n\"1 Panty negra XL y otro blanco L\" → 2 registros.\n\"Panty M negro y Panty Thermoreductor S piel\" → 2 registros.\n\n═══ CASOS ESPECIALES ═══\n\nQuiere cambiar o agregar otro producto:\n\"Claro reina! Te paso de nuevo con la info de productos para que escojas 💕\" y termina.\n\nSe arrepiente o no quiere comprar:\n\"Entiendo! 😊 Muchas gracias por tu interés. Estoy para servirte en otra ocasión. 💬✨\" y termina.\n\nReembolsos, reclamos o devoluciones especiales:\n\"Esa solicitud la voy a pasar a un supervisor humano para que te atienda personalmente 📩. Te contactarán pronto por este mismo chat.\" y termina.\n\n═══ PROHIBICIONES ═══\n\n❌ No repitas el mensaje de bienvenida.\n❌ No informes sobre procesos internos al cliente.\n❌ Solo usa los mensajes del PASO 7 y PASO 9 después de registrar.\n❌ No uses ¿ ni ¡. Solo ? y ! Sin asteriscos."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -1742,27 +2427,6 @@
         "deepSeekApi": {
           "id": "mcWiRvbQxM7vhrvQ",
           "name": "DeepSeek account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "sessionIdType": "customKey",
-        "sessionKey": "={{ $('Parse Input').item.json.sessionId }}_pedidos",
-        "tableName": "agente_venus_comercial"
-      },
-      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
-      "typeVersion": 1.3,
-      "position": [
-        464,
-        208
-      ],
-      "name": "Postgres Chat Memory",
-      "id": "07f18f60-5923-4cf0-9a3b-a785b70a2324",
-      "credentials": {
-        "postgres": {
-          "id": "GfVshj4pwlQSq355",
-          "name": "Postgres account"
         }
       }
     },
@@ -2195,17 +2859,6 @@
         ]
       ]
     },
-    "Postgres Chat Memory": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent Pedidos",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Google_Sheets_Append_Pedido": {
       "ai_tool": [
         [
@@ -2243,6 +2896,7 @@
 }
 
 
+
 {
   "nodes": [
     {
@@ -2262,20 +2916,37 @@
         0
       ],
       "name": "When Executed by Another Workflow",
-      "id": "b1a43b7c-4725-4150-a0c8-c4f21105e49c"
+      "id": "02f55d05-d218-4036-897e-8b87761cf9f5"
     },
     {
       "parameters": {
-        "jsCode": "// El orquestador envía un JSON string en query\n// Esperamos: { sessionId, message, es_primera_vez, fechaHora }\nlet payload = {};\ntry {\n  const raw = $input.first().json.query;\n  payload = typeof raw === 'string' ? JSON.parse(raw) : raw;\n} catch (e) {\n  payload = { message: $input.first().json.query || '', sessionId: 'default-user' };\n}\nreturn [{ json: {\n  sessionId: payload.sessionId || 'default-user',\n  message: payload.message || '',\n  es_primera_vez: payload.es_primera_vez || 'NO',\n  fechaHora: payload.fechaHora || new Date().toISOString()\n}}];"
+        "jsCode": "let payload = {};\ntry {\n  const raw = $input.first().json.query;\n  payload = typeof raw === 'string' ? JSON.parse(raw) : raw;\n} catch (e) {\n  payload = { message: $input.first().json.query || '', sessionId: 'default-user' };\n}\nreturn [{ json: {\n  sessionId: payload.sessionId || 'default-user',\n  message: payload.message || '',\n  es_primera_vez: payload.es_primera_vez || 'NO',\n  fechaHora: payload.fechaHora || new Date().toISOString()\n}}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        144,
+        208,
         0
       ],
       "name": "Parse Input",
-      "id": "1e0589bc-e319-4f7f-be01-de3b57882c93"
+      "id": "14fe21d3-15a7-42e6-a037-bd3b3779755e"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message }}",
+        "options": {
+          "systemMessage": "=🧠 VENUS  — SUB-AGENTE MULTIMEDIA\n\nEres Venus, asesora comercial de Venus La Forma Perfecta. Mismo tono cálido, colombiano, chill.\nEncabezados: \"Claro que sí! ✨\" / \"De una, mira! 👀\" / \"Excelente elección! 💃\" / \"Con mucho gusto! 💁‍♀️\"\nSolo ? y ! (nunca ¿ ni ¡). Sin asteriscos.\n\nFECHA Y HORA COLOMBIA: {{ $json.fechaHora }}\n\n═══ TU ROL ═══\n\nEnviar material visual: fotos reales de bodega, espumas internas, guía Interrapidísimo, promociones.\nNO das info técnica ni precios (agente Catálogo).\nNO tomas datos de envío (agente Pedidos).\nNO saludas (agente Orquestador).\n\n═══ FLUJO OPERATIVO — 4 PASOS SIEMPRE EN ESTE ORDEN ═══\n\nPASO 1: Lee el payload. Identifica qué pidió el usuario.\n\nPASO 2: Antes de llamar la tool, envía 1 frase breve y entusiasta (varía, no repitas):\n- \"Claro que sí reina! Mira estas fotos reales 📸\"\n- \"De una mi corazon, ya te las mando ✨\"\n- \"Te va a encantar! Mira desde nuestra bodega 🔥\"\n- \"Con mucho gusto Querida, aquí te van 💃\"\n- \"Excelente! Mira estas fotos para que veas la calidad 💖\"\n\nPASO 3: Llama UNA SOLA tool, la que aplique exactamente.\n\nPASO 4: Después del material, cierra con UNA pregunta que impulse la venta (varía):\n- \"Te gustó mi vida? Te tomo los datos para el envío?\"\n- \"Qué dices reina, la separamos para ti?\"\n- \"Quieres verla en otro color o ya te la separamos?\"\n- \"Lista para pedirla o quieres ver otro modelo?\"\n\n═══ APEO DE TOOLS ═══\n\nCall_foto_bodega_realce\n→ Fotos reales, de bodega o puesta de la PANTY LEVANTA GLÚTEOS CON REALCE MOVIBLE.\n\nCall_foto_espuma_realce\n→ La espuma, el relleno, el realce removible, cómo se ve por dentro la panty con realce, los bolsillitos acolchados.\n\nCall_foto_bodega_short_faja\n→ Fotos reales o de bodega del SHORT FAJA MOLDEADORA CROSS FORM puesta.\n\nCall_fotos_bodega_Panty_Faja\n→ Fotos reales o de bodega de la PANTY FAJA MOLDEADORA CROSS FORM puesta.\n\nCall_foto_interrapidisimo\n→ Empresa de envíos, guía de envío, Interrapidísimo, empaque, evidencia de que el envío es real.\n\nCall_promo_Panty_Faja\n→ Promociones, descuentos, combos u ofertas de la Panty Faja Moldeadora de Compresión Cross Form.\n\n═══ PRODUCTOS SIN TOOL DISPONIBLE ═══\n\nSi el cliente pide fotos reales de bodega de un Modelo sin tool (Faja Látex, Body Cinturilla, Pescador, Faja Moldeadora Transpirable, Cinturilla, Panty Thermoreductor, Panty Aplana Abdomen):\n\"Claro que si , de ese modelo específico te envio toda la informacion con un link donde enuentras fotos y videos en nuestra pàgina de facebook 💕\"\nY le mandas la informacion del modelo que desea el cliente al agente de orquestador par aque el envie la solicitud al agende de catalogo.\n\n═══ CASOS ESPECIALES DESPUÉS DE VER LAS FOTOS ═══\n\nSi pregunta por info técnica, materiales o precios:\n\"Qué bueno que te gustó reina! Te paso de nuevo con la info completa del producto 💕\" y termina.\n\nSi dice \"la quiero\", \"la llevo\", \"cómo pido\":\n\"Perfecto reina! Enseguida te tomo los datos para el envío 💕\" y termina.\n\n═══ REGLAS FINALES ═══\n\n- Máximo 2 líneas antes de la tool, 2 líneas después.\n- No des información técnica ni precios.\n- No tomes datos de envío.\n- No repitas la misma frase de apertura dos veces en la misma conversación.\n- No uses ¿ ni ¡. Solo ? y ! Sin asteriscos."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        512,
+        0
+      ],
+      "name": "AI Agent Multimedia",
+      "id": "82159330-dcd6-4398-b978-f632885bc993"
     },
     {
       "parameters": {
@@ -2284,11 +2955,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
       "typeVersion": 1,
       "position": [
-        1072,
-        0
+        304,
+        208
       ],
       "name": "DeepSeek Chat Model",
-      "id": "2f46d6cb-b51d-4858-9016-30aedc1293a9",
+      "id": "6d1edbcc-2e29-439c-a836-5c595e3476ac",
       "credentials": {
         "deepSeekApi": {
           "id": "mcWiRvbQxM7vhrvQ",
@@ -2298,34 +2969,43 @@
     },
     {
       "parameters": {
-        "sessionIdType": "customKey",
-        "sessionKey": "={{ $('Parse Input').item.json.sessionId }}_catalogo",
-        "tableName": "agente_venus_comercial",
-        "contextWindowLength": 20
-      },
-      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
-      "typeVersion": 1.3,
-      "position": [
-        928,
-        0
-      ],
-      "name": "Postgres Chat Memory",
-      "id": "434d1270-9b0f-4758-b262-4d990e40af33",
-      "credentials": {
-        "postgres": {
-          "id": "GfVshj4pwlQSq355",
-          "name": "Postgres account"
+        "description": "Usa esta herramienta cuando el usuario pida fotos reales o fotos de bodega de la Panty Levanta Glúteos con Realce Movible o panty de espuma.",
+        "workflowId": {
+          "__rl": true,
+          "value": "zmzEjMvygorrL6JY",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/zmzEjMvygorrL6JY",
+          "cachedResultName": "Call_foto_bodega_realce"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [
+            "query"
+          ],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         }
-      }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        656,
+        304
+      ],
+      "name": "Call_foto_bodega_realce",
+      "id": "5933b239-fb22-4ca0-9854-3b8c373b0064"
     },
     {
       "parameters": {
-        "name": "Panty_Levanta_Gluteos_con_Realce_Movible",
-        "description": "Información de la Panty Levanta Glúteos con Realce Movible (panty con espuma de relleno)",
+        "description": "Usa esta herramienta cuando el usuario pregunte por cómo envían los pedidos o los productos. Envía foto de Interrapidísimo.",
         "workflowId": {
           "__rl": true,
-          "value": "tGeJpcfufRTX9IfV",
-          "mode": "id"
+          "value": "4SZhRjGVHOQHcgRa",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/4SZhRjGVHOQHcgRa",
+          "cachedResultName": "Call_foto_interrapidisimo"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -2343,7 +3023,8 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string"
+              "type": "string",
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -2351,22 +3032,23 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
+      "typeVersion": 2.2,
       "position": [
-        -112,
-        208
+        864,
+        304
       ],
-      "name": "Panty_Levanta_Gluteos_con_Realce_Movible",
-      "id": "ced8a738-0a4d-4638-88ba-b084035d95f5"
+      "name": "Call_foto_interrapidisimo",
+      "id": "8bd4da4e-159a-476c-9a6a-c28da5f80ab1"
     },
     {
       "parameters": {
-        "name": "Call_Body_Cinturilla_Thermoreductor",
-        "description": "Información del Body Cinturilla Thermoreductor",
+        "description": "Usa esta herramienta cuando el usuario pida fotos reales o fotos de bodega del Short Faja Moldeadora de Compresión Cross Form.",
         "workflowId": {
           "__rl": true,
-          "value": "w39hNLTaEC7Ljfmx",
-          "mode": "id"
+          "value": "1nwmLMqtLbCrTX2x",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/1nwmLMqtLbCrTX2x",
+          "cachedResultName": "Call_foto_bodega_short_faja"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -2384,7 +3066,8 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string"
+              "type": "string",
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -2392,22 +3075,23 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
+      "typeVersion": 2.2,
       "position": [
-        96,
-        208
+        1008,
+        256
       ],
-      "name": "Call_Body_Cinturilla_Thermoreductor",
-      "id": "9d9a3a88-c948-42c5-a394-3560a372f4dd"
+      "name": "Call_foto_bodega_short_faja",
+      "id": "b8605465-da11-4250-b9f9-1e5aee87c03e"
     },
     {
       "parameters": {
-        "name": "Call_faja_neolatex_gym",
-        "description": "Información de la Faja Neolatex Gym",
+        "description": "Usa esta herramienta cuando el usuario pida fotos reales o fotos de bodega de la Panty Faja Moldeadora de Compresión Cross Form.",
         "workflowId": {
           "__rl": true,
-          "value": "WvGX9pCiziitaa4k",
-          "mode": "id"
+          "value": "DESRsBTWKX9b4FaI",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/DESRsBTWKX9b4FaI",
+          "cachedResultName": "Call_fotos_bodega_Panty_Faja"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -2425,7 +3109,8 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string"
+              "type": "string",
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -2433,22 +3118,23 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
+      "typeVersion": 2.2,
       "position": [
-        304,
-        224
+        1152,
+        304
       ],
-      "name": "Call_faja_neolatex_gym",
-      "id": "7919d76a-4604-4264-9835-c99f1e6288d4"
+      "name": "Call_fotos_bodega_Panty_Faja",
+      "id": "d43febfb-044f-45c5-9c2a-8fda0c96ec7f"
     },
     {
       "parameters": {
-        "name": "Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen",
-        "description": "Información de la Panty Levanta Glúteos y Aplana Abdomen",
+        "description": "Usa esta herramienta cuando el usuario pregunte si la Panty con Realce trae relleno o espuma, o pida fotos de las espumas.",
         "workflowId": {
           "__rl": true,
-          "value": "NKNSRHuGnKkrRYVd",
-          "mode": "id"
+          "value": "sUEPKjF2OItmW0AV",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/sUEPKjF2OItmW0AV",
+          "cachedResultName": "Call_foto_espuma_realce"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -2466,7 +3152,8 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string"
+              "type": "string",
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -2474,22 +3161,23 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
+      "typeVersion": 2.2,
       "position": [
-        -144,
-        416
+        1312,
+        304
       ],
-      "name": "Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen",
-      "id": "336d0b20-c072-4637-b979-1ddbfd86623a"
+      "name": "Call_foto_espuma_realce",
+      "id": "9ded5311-c818-4752-a9fc-0268273347d0"
     },
     {
       "parameters": {
-        "name": "Call_Panty_Thermoreductor_Levanta_Gluteos",
-        "description": "Información de la Panty Thermoreductor Levanta Glúteos",
+        "description": "Usa esta herramienta cuando el usuario pregunte por promociones de la Panty Faja, Short Faja o Panty Faja Larga.",
         "workflowId": {
           "__rl": true,
-          "value": "M3OHRpLSCYCCvXX3",
-          "mode": "id"
+          "value": "GVvG2yMbXcMiFiZN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/GVvG2yMbXcMiFiZN",
+          "cachedResultName": "Call_promo_Panty_Faja"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -2507,7 +3195,8 @@
               "defaultMatch": false,
               "display": true,
               "canBeUsedToMatch": true,
-              "type": "string"
+              "type": "string",
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -2515,289 +3204,13 @@
         }
       },
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
+      "typeVersion": 2.2,
       "position": [
-        80,
-        416
+        1456,
+        304
       ],
-      "name": "Call_Panty_Thermoreductor_Levanta_Gluteos",
-      "id": "a0d6d469-68e8-4062-ae02-99f2bf0a73f8"
-    },
-    {
-      "parameters": {
-        "name": "Call_Faja_Latex",
-        "description": "Información de la Faja Látex",
-        "workflowId": {
-          "__rl": true,
-          "value": "NX9fvfzglRYwfVEq",
-          "mode": "id"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "query": "={{ $('Parse Input').item.json.sessionId }}"
-          },
-          "matchingColumns": [
-            "query"
-          ],
-          "schema": [
-            {
-              "id": "query",
-              "displayName": "query",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        288,
-        432
-      ],
-      "name": "Call_Faja_Latex",
-      "id": "23bd2e33-421b-464c-bea9-9afab86d7230"
-    },
-    {
-      "parameters": {
-        "name": "Call_Pescador_Levanta_Gluteos_Thermoreductor",
-        "description": "Información del Pescador Levanta Glúteos Thermoreductor",
-        "workflowId": {
-          "__rl": true,
-          "value": "zM2bU4grY8HChGVG",
-          "mode": "id"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "query": "={{ $('Parse Input').item.json.sessionId }}"
-          },
-          "matchingColumns": [
-            "query"
-          ],
-          "schema": [
-            {
-              "id": "query",
-              "displayName": "query",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        528,
-        224
-      ],
-      "name": "Call_Pescador_Levanta_Gluteos_Thermoreductor",
-      "id": "5cb0d908-2812-4f7e-949e-29ab001ae911"
-    },
-    {
-      "parameters": {
-        "name": "Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form",
-        "description": "Información del Short Faja Moldeadora de Compresión Cross Form",
-        "workflowId": {
-          "__rl": true,
-          "value": "kNxi0k6j5PGqNf6O",
-          "mode": "id"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "query": "={{ $('Parse Input').item.json.sessionId }}"
-          },
-          "matchingColumns": [
-            "query"
-          ],
-          "schema": [
-            {
-              "id": "query",
-              "displayName": "query",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        496,
-        416
-      ],
-      "name": "Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form",
-      "id": "66ac72fe-f8d2-4645-9369-8b3ed74d78e2"
-    },
-    {
-      "parameters": {
-        "name": "Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form",
-        "description": "Información de la Panty Faja Moldeadora de Compresión Cross Form",
-        "workflowId": {
-          "__rl": true,
-          "value": "t6fqkCHLnW6w3hyO",
-          "mode": "id"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "query": "={{ $('Parse Input').item.json.sessionId }}"
-          },
-          "matchingColumns": [
-            "query"
-          ],
-          "schema": [
-            {
-              "id": "query",
-              "displayName": "query",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        720,
-        240
-      ],
-      "name": "Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form",
-      "id": "02e9b95b-f522-49c3-8c9f-5bb570cc925c"
-    },
-    {
-      "parameters": {
-        "name": "Call_Cinturilla_Short_Thermoreductora",
-        "description": "Información de la Cinturilla Short Levanta Glúteos Thermoreductora",
-        "workflowId": {
-          "__rl": true,
-          "value": "I0xaxEgQSmv3t1uF",
-          "mode": "id"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "query": "={{ $('Parse Input').item.json.sessionId }}"
-          },
-          "matchingColumns": [
-            "query"
-          ],
-          "schema": [
-            {
-              "id": "query",
-              "displayName": "query",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        720,
-        432
-      ],
-      "name": "Call_Cinturilla_Short_Thermoreductora",
-      "id": "2befed61-5efd-494d-873d-2e1b7abd788a"
-    },
-    {
-      "parameters": {
-        "name": "Call_Faja_Moldeadora_Transpirable",
-        "description": "Información de la Faja Moldeadora Transpirable",
-        "workflowId": {
-          "__rl": true,
-          "value": "7Tuni9sxf02h7hXj",
-          "mode": "id"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "query": "={{ $('Parse Input').item.json.sessionId }}"
-          },
-          "matchingColumns": [
-            "query"
-          ],
-          "schema": [
-            {
-              "id": "query",
-              "displayName": "query",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        928,
-        240
-      ],
-      "name": "Call_Faja_Moldeadora_Transpirable",
-      "id": "37bb97c0-a958-41cd-95f8-3e3fe5a0a0f6"
-    },
-    {
-      "parameters": {
-        "jsCode": "const msg = $input.first().json.message.toLowerCase();\n\nconst modelos = [\n  { key: 'faja moldeadora transpirable', tool: 'Call_Faja_Moldeadora_Transpirable' },\n  { key: 'panty levanta glúteos con realce', tool: 'Panty_Levanta_Gluteos_con_Realce_Movible' },\n  { key: 'panty faja moldeadora de compresión cross form', tool: 'Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form' },\n  { key: 'short faja moldeadora de compresión cross form', tool: 'Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form' },\n  { key: 'faja neolatex gym', tool: 'Call_faja_neolatex_gym' },\n  { key: 'panty levanta glúteos y aplana abdomen', tool: 'Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen' },\n  { key: 'panty thermoreductor levanta glúteos', tool: 'Call_Panty_Thermoreductor_Levanta_Gluteos' },\n  { key: 'faja látex', tool: 'Call_Faja_Latex' },\n  { key: 'cinturilla short levanta glúteos thermoreductora', tool: 'Call_Cinturilla_Short_Thermoreductora' },\n  { key: 'pescador levanta glúteos thermoreductor', tool: 'Call_Pescador_Levanta_Gluteos_Thermoreductor' },\n  { key: 'body cinturilla thermoreductor', tool: 'Call_Body_Cinturilla_Thermoreductor' }\n];\n\nlet toolEncontrada = null;\nfor (const m of modelos) {\n  if (msg.includes(m.key)) {\n    toolEncontrada = m.tool;\n    break;\n  }\n}\n\nreturn [{\n  json: {\n    sessionId: $input.first().json.sessionId,\n    message: $input.first().json.message,\n    tool: toolEncontrada,\n    output: toolEncontrada \n      ? 'Qué talla y color te gustaría de ese modelo? 😊'\n      : 'Mmm Querida, me cuentas un poquito más qué prenda buscas? Así te ayudo mejor 💕'\n  }\n}];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        352,
-        0
-      ],
-      "id": "0f5996cf-f31e-46f7-a824-5f47bf1d314c",
-      "name": "Identificar Modelo"
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "={{ $json.message }}",
-        "options": {
-          "systemMessage": "=🧠 VENUS I.A. — SUB-AGENTE CATÁLOGO\n\nREGLA ABSOLUTA: Cuando ejecutes una tool, tu respuesta al usuario es EXACTAMENTE el texto del campo \"output\" que devuelve la tool. Cópialo literalmente. No añadas nada. No expliques que usaste una tool.\n\nEres Venus I.A., asesora comercial de Venus La Forma Perfecta. Mismo tono cálido, colombiano, chill.\nEncabezados: \"Claro que sí! ✨\" / \"Perfecto! 🫶\" / \"Maravilloso! 😍\" / \"Excelente elección! 💃\" / \"De una, mira! 👀\"\nSolo ? y ! (nunca ¿ ni ¡). Sin asteriscos.\n\nFECHA Y HORA COLOMBIA: {{ $json.fechaHora }}\n\n═══ TU ROL ═══\n\nEjecutas el corazón de la venta:\n- PASO 2: ejecutar la tool del modelo\n- PASO 3: preguntar talla y color\n- PASO 4: enviar tabla de tallas si la piden\n- PASO 5: confirmar talla y color\n- PROCESO 4: enviar link de pago online si lo piden\n\nNO saludas. NO pides datos de envío (agente Pedidos). NO envías fotos reales (agente Multimedia).\n\n═══ ANÁLISIS DE IMAGEN ═══\n\nSi el mensaje tiene prefijo \"(Análisis de imagen)\":\n- Compara con las descripciones de las tools.\n- Coincidencia exacta → activa la tool directamente.\n- Duda → responde con la linea más probable y pide confirmación.\n- Nunca actives todas las lineas si ya identificaste una modelo.\n\nREGLA CRÍTICA Y OBLIGATORIA:\n\nSi el usuario menciona uno de estos modelos, DEBES usar inmediatamente la tool correcta.\nNo puedes responder con descripción escrita por ti.\nNo puedes saltarte la tool.\nNo puedes pedir confirmación antes de usar la tool.\n\nModelos y tools:\n\n\"Faja Moldeadora Transpirable\" → Call_Faja_Moldeadora_Transpirable\n\"Panty Levanta Glúteos con Realce Movible\" → Panty_Levanta_Gluteos_con_Realce_Movible\n\"Panty Faja Moldeadora de Compresión Cross Form\" → Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form\n\"Short Faja Moldeadora de Compresión Cross Form\" → Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form\n\"Faja Neolatex Gym\" → Call_faja_neolatex_gym\n\"Panty Levanta Glúteos y Aplana Abdomen\" → Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen\n\"Panty Thermoreductor Levanta Glúteos\" → Call_Panty_Thermoreductor_Levanta_Gluteos\n\"Faja Látex\" → Call_Faja_Latex\n\"Cinturilla Short Levanta Glúteos Thermoreductora\" → Call_Cinturilla_Short_Thermoreductora\n\"Pescador Levanta Glúteos Thermoreductor\" → Call_Pescador_Levanta_Gluteos_Thermoreductor\n\"Body Cinturilla Thermoreductor\" → Call_Body_Cinturilla_Thermoreductor\n\nDespués de usar la tool, responde solamente:\n\"Qué talla y color te gustaría de ese modelo?\"\n\nSi no usas la tool cuando hay un modelo exacto, tu respuesta está mal.\n\n═══ PASO 2 — ACTIVACIÓN DE TOOL ═══\n\nCuando el usuario mencione un modelo (texto, audio, imagen o video):\n\n✅ Coincidencia exacta → ejecuta la tool directamente. Sin mensaje previo innecesario.\n✅ Después de ejecutar → NO repitas ni reformules su contenido. Continúa al PASO 3.\n❌ No pidas confirmación antes de ejecutar.\n❌ No combines el contenido de la tool con tu propia descripción.\n\nMAPA MODELOS → TOOL:\n\n\"Faja Moldeadora Transpirable\" → Call_Faja_Moldeadora_Transpirable\n\"Panty Levanta Glúteos con Realce Movible\" → Panty_Levanta_Gluteos_con_Realce_Movible\n\"Panty Faja Moldeadora de Compresión Cross Form\" → Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form\n\"Short Faja Moldeadora de Compresión Cross Form\" → Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form\n\"Faja Neolatex Gym\" → Call_faja_neolatex_gym\n\"Panty Levanta Glúteos y Aplana Abdomen\" → Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen\n\"Panty Thermoreductor Levanta Glúteos\" → Call_Panty_Thermoreductor_Levanta_Gluteos\n\"Faja Látex\" → Call_Faja_Latex\n\"Cinturilla Short Levanta Glúteos Thermoreductora\" → Call_Cinturilla_Short_Thermoreductora\n\"Pescador Levanta Glúteos Thermoreductor\" → Call_Pescador_Levanta_Gluteos_Thermoreductor\n\"Body Cinturilla Thermoreductor\" → Call_Body_Cinturilla_Thermoreductor\n\n❌ Sin coincidencia clara:\n\"Mmm Querida, me cuentas un poquito más qué prenda buscas? Así te ayudo mejor 💕\"\n\n═══ PASO 3 — PREGUNTAR TALLA Y COLOR ═══\n\nInmediatamente después de que la tool entregue su contenido, en un mensaje separado:\n\"Qué talla y color te gustaría de ese modelo?\"\no\n\"Qué color y qué talla prefieres?\"\n\n🔒 Solo después de ejecutar la tool del PASO 2.\n🔒 No mezcles esta pregunta con el contenido de la tool.\n\n═══ PASO 4 — TABLA DE TALLAS ═══\n\nSi el usuario no sabe su talla, busca en el contenido que devolvió la tool el link de tabla de tallas y envíalo.\n🔒 No uses links genéricos. Solo el link que vino dentro del contenido de la tool.\n\n═══ PASO 5 — CONFIRMAR TALLA Y COLOR ═══\n\nCuando el usuario indique talla y color:\n\"Perfecto, entonces confirmamos la talla [TALLA] y color [COLOR] para el [NOMBRE DEL MODELO]?\"\n\nReglas:\n- No repitas características ni descripción del MODELO.\n- Solo continúa cuando el usuario diga: Ok, Si, Está bien, Correcto.\n- Si confirma → responde: \"Excelente! 💃 Ahora te voy a pedir los datos para tu envío...\" y termina.\n\nEjemplo correcto: \"Perfecto, entonces confirmamos la talla M y color negro para la Faja Moldeadora Transpirable?\"\nEjemplo incorrecto: \"La Faja está hecha de material transpirable... Quieres la M negro?\" ❌\n\n═══ PROCESO DE VENTA 2 — SOLICITUD DIRECTA POR CAMPAÑA ═══\n\nSi recibes payload con:\n\"Venus La Forma Perfecta desea que seas la mejor versión de ti 🌟...✨Call [MODELO]\"\n→ Ejecuta inmediatamente la tool. Después pregunta solo:\n\"Qué talla y color te gustaría de ese modelo?\"\n❌ Sin mensajes de presentación antes de la tool.\n\n═══ PROCESO DE VENTA 4 — PAGO ONLINE ═══\n\nSi el cliente pide pagar con tarjeta / débito / PSE, envía el link exacto del producto activo:\n\nFaja Moldeadora Transpirable:\nhttps://venuslaformaperfecta.shop/tienda/fajas/faja-moldeadora/\n\nPanty Levanta Glúteos con Realce Movible:\nhttps://venuslaformaperfecta.shop/tienda/pantys-levanta-gluteos/panty-levanta-gluteos-con-realce-movible/\n\nPanty Faja Moldeadora de Compresión Cross Form:\nhttps://venuslaformaperfecta.shop/tienda/panty-faja-levanta-gluteos/panty-faja-moldeadora-de-compresion-crossform/\n\nShort Faja Moldeadora de Compresión Cross Form:\nhttps://venuslaformaperfecta.shop/tienda/panty-faja-levanta-gluteos/short-faja-moldeadora-de-compresion-crossform/\n\nFaja Neolatex Gym:\nhttps://venuslaformaperfecta.shop/tienda/fajas/faja-neolatex-gym/\n\nPanty Levanta Glúteos y Aplana Abdomen:\nhttps://venuslaformaperfecta.shop/tienda/pantys-levanta-gluteos/panty-levanta-gluteos-y-aplana-abdomen/\n\nPanty Thermoreductor tipo Faja:\nhttps://venuslaformaperfecta.shop/tienda/pantys-levanta-gluteos/panty-thermoreductor-levanta-gluteo/\n\nFaja Látex:\nhttps://venuslaformaperfecta.shop/tienda/fajas/faja-100-latex/\n\nCinturilla Short Levanta Glúteos Thermoreductora:\nhttps://venuslaformaperfecta.shop/tienda/panty-faja-levanta-gluteos/cinturilla-short-levanta-gluteos-thermoreductora/\n\nPescador Levanta Glúteos Thermoreductor:\nhttps://venuslaformaperfecta.shop/tienda/thermo-bodys-y-pescadores/pescador-levanta-gluteos-thermoreductor/\n\nBody Cinturilla Thermoreductor:\nhttps://venuslaformaperfecta.shop/tienda/thermo-bodys-y-pescadores/body-cinturilla-thermoreductor/\n\nDespués del link, envía siempre este mensaje exacto:\n\"Este es el link oficial y seguro de la página web de Venus La Forma Perfecta. Allí puedes realizar tu pago con tarjeta de crédito, débito o PSE. Al finalizar la compra, el sistema te generará automáticamente una factura con todos tus datos completos, y podrás ingresar tu dirección para el envío de la prenda. Estoy muy pendiente por este medio para ayudarte en lo que necesites con este proceso. 💜\"\n\nSi aún no ha elegido producto → pregúntale cuál quiere. No envíes link genérico.\n\n═══ PASO 8 — USUARIO NO DESEA COMPRAR ═══\n\n\"Entiendo! 😊 Muchas gracias por tu interés. Estoy para servirte en otra ocasión, cuando lo necesites. 💬✨\"\nY termina. No insistas.\n\n═══ REGLAS FINALES ═══\n\n- Un paso por mensaje. No combines pasos.\n- No reformules lo que devuelven las tools.\n- Lee el historial para no repetir info.\n- Si pide fotos reales → no respondas, el orquestador lo enviará al agente Multimedia.\n- Si ya confirmó talla y color → no pidas datos de envío, el orquestador lo enviará al agente Pedidos.\n- No uses ¿ ni ¡. Solo ? y ! Sin asteriscos."
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.6,
-      "position": [
-        560,
-        0
-      ],
-      "name": "AI Agent Catalogo",
-      "id": "168f386c-3d0a-4135-9f30-cbae57fbd413"
+      "name": "Call_promo_Panty_Faja",
+      "id": "2bb3425c-9de1-4ece-b543-c87b9100fb2e"
     }
   ],
   "connections": {
@@ -2816,7 +3229,7 @@
       "main": [
         [
           {
-            "node": "Identificar Modelo",
+            "node": "AI Agent Multimedia",
             "type": "main",
             "index": 0
           }
@@ -2827,151 +3240,74 @@
       "ai_languageModel": [
         [
           {
-            "node": "AI Agent Catalogo",
+            "node": "AI Agent Multimedia",
             "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Postgres Chat Memory": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent Catalogo",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Panty_Levanta_Gluteos_con_Realce_Movible": {
+    "Call_foto_bodega_realce": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Catalogo",
+            "node": "AI Agent Multimedia",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_Body_Cinturilla_Thermoreductor": {
+    "Call_foto_interrapidisimo": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Catalogo",
+            "node": "AI Agent Multimedia",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_faja_neolatex_gym": {
+    "Call_foto_bodega_short_faja": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Catalogo",
+            "node": "AI Agent Multimedia",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_Panty_Levanta_Gluteos_y_Aplana_Abdomen": {
+    "Call_fotos_bodega_Panty_Faja": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Catalogo",
+            "node": "AI Agent Multimedia",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_Panty_Thermoreductor_Levanta_Gluteos": {
+    "Call_foto_espuma_realce": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Catalogo",
+            "node": "AI Agent Multimedia",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Call_Faja_Latex": {
+    "Call_promo_Panty_Faja": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Catalogo",
+            "node": "AI Agent Multimedia",
             "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Call_Pescador_Levanta_Gluteos_Thermoreductor": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent Catalogo",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Call_Short_Faja_Moldeadora_de_Compresion_Cross_Form": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent Catalogo",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Call_Panty_Faja_Moldeadora_de_Compresion_Cross_Form": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent Catalogo",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Call_Cinturilla_Short_Thermoreductora": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent Catalogo",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Call_Faja_Moldeadora_Transpirable": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent Catalogo",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Identificar Modelo": {
-      "main": [
-        [
-          {
-            "node": "AI Agent Catalogo",
-            "type": "main",
             "index": 0
           }
         ]
@@ -2985,757 +3321,4 @@
   }
 }
 
-y te dejo una de las tool para que veas como estan configuradas:
 
-{
-  "nodes": [
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "messageType": "video",
-        "mediaPath": "useMedian8n",
-        "additionalFields": {
-          "mediaCaption": "💖 Descripción:\n✅ Material: Cómodo y Suave 🌿\n✅ Respirable e Hipoalergénico 💨💓\n"
-        }
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        2144,
-        0
-      ],
-      "name": "WhatsApp Business Cloud1",
-      "id": "63cd77d9-3bb5-47a0-ba7d-b2eaf9f84f66",
-      "webhookId": "410a4b20-1ca5-46a4-810a-eb81fe557a8d",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "workflowInputs": {
-          "values": [
-            {
-              "name": "query"
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        0,
-        0
-      ],
-      "name": "When Executed by Another Workflow",
-      "id": "fe70d2ad-8597-4ea4-ac5e-d85029ee0511"
-    },
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "messageType": "image",
-        "mediaPath": "useMedian8n",
-        "additionalFields": {
-          "mediaCaption": "🚚 Envío GRATIS incluido y pago contra entrega ✈️📦\n💳 Aceptamos todos los medios de pago: Débito, Crédito y PSE 🛍️💖\n"
-        }
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        2192,
-        688
-      ],
-      "name": "WhatsApp Business Cloud3",
-      "id": "c3edcb69-97b9-4d13-8b9f-9d3ecaf31447",
-      "webhookId": "e5b851ee-b127-4270-9a7e-023e7caaa5d9",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "textBody": "✅ Uso: Bajo el Pecho ✨\n✅ Sistema de 3 broches 🔗 y 4 varillas que no se sienten y evitan los rollitos 🌟\n",
-        "additionalFields": {}
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        2704,
-        0
-      ],
-      "name": "WhatsApp Business Cloud4",
-      "id": "9f65b23d-0c7e-4c94-8ab1-fc6e385b184b",
-      "webhookId": "b8cfb1f7-4548-4b8a-beb9-7e14f5629f31",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "textBody": "=✅ Perfecto para cualquier ocasión: Bodas 👰, Fiestas 🎉, Trabajo 💼, Deporte 🏋️‍♀️ y Relajación 🧘‍♀️\n",
-        "additionalFields": {}
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        160,
-        384
-      ],
-      "name": "WhatsApp Business Cloud5",
-      "id": "3f22081b-ff39-4657-bdea-a5c1ef46c0f7",
-      "webhookId": "72d42457-7c45-4b2a-9583-aa3bc745739a",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "textBody": "=✅ Moldea tu cuerpo y reduce medidas de abdomen, cintura y caderas 🔥🍑\n",
-        "additionalFields": {}
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        752,
-        384
-      ],
-      "name": "WhatsApp Business Cloud6",
-      "id": "b7638d0f-2471-4dd1-b27c-53337af03a11",
-      "webhookId": "2d243455-128f-43d4-92d9-ceb734253839",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "textBody": "=✅ Colores disponibles: Negro ⚫ y Piel 🤎\n✅ Tallas: S / M / L / XL 📏\n",
-        "additionalFields": {}
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        2752,
-        384
-      ],
-      "name": "WhatsApp Business Cloud7",
-      "id": "95be9baa-f4d3-42e8-81a1-c96eaf0f8f8d",
-      "webhookId": "5b79fd0f-2514-4d5e-807f-ed7d9d4beb85",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "textBody": "=✅ Material: Poliéster y Spandex 🧵\n",
-        "additionalFields": {}
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        48,
-        688
-      ],
-      "name": "WhatsApp Business Cloud8",
-      "id": "3d42a53c-bee3-44dd-aa1d-eab577a50f24",
-      "webhookId": "7ab5e2b0-4a7d-4456-8bdb-86914eac097e",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "textBody": "=📸 Fotos: https://www.facebook.com/share/p/1A7hRvNtsR\n🎥 Video: https://www.facebook.com/share/v/1E61htUfqp\n📏 Tabla de tallas y medidas: https://www.facebook.com/share/p/15wJX1otzM\n",
-        "additionalFields": {}
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        768,
-        688
-      ],
-      "name": "WhatsApp Business Cloud9",
-      "id": "508d97d3-c16e-4b42-a523-b94559942a66",
-      "webhookId": "7844d583-a311-4b35-9a1a-fc956b4ffb18",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "mode": "raw",
-        "jsonOutput": "{\n  \"nodes\": [\n    {\n      \"parameters\": {\n        \"mode\": \"raw\",\n        \"jsonOutput\": \"{\\n  \\\"parameters\\\": {\\n    \\\"mode\\\": \\\"manual\\\",\\n    \\\"duplicateItem\\\": false,\\n    \\\"assignments\\\": {\\n      \\\"assignments\\\": [\\n        {\\n          \\\"id\\\": \\\"silencio-output-01\\\",\\n          \\\"name\\\": \\\"output\\\",\\n          \\\"value\\\": \\\"[SILENCIO]\\\",\\n          \\\"type\\\": \\\"string\\\"\\n        }\\n      ]\\n    },\\n    \\\"includeOtherFields\\\": false,\\n    \\\"options\\\": {}\\n  },\\n  \\\"type\\\": \\\"n8n-nodes-base.set\\\",\\n  \\\"typeVersion\\\": 3.4,\\n  \\\"name\\\": \\\"Respuesta Silenciosa\\\",\\n  \\\"position\\\": [0, 0]\\n}\",\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        2544,\n        864\n      ],\n      \"name\": \"Edit Fields7\",\n      \"id\": \"ca903a48-41e8-4cea-881a-4b6811145d8e\"\n    }\n  ],\n  \"connections\": {},\n  \"pinData\": {},\n  \"meta\": {\n    \"templateCredsSetupCompleted\": true,\n    \"instanceId\": \"9a8d0686adf6914aaf7bd3e472cc20cbf146406b96153e84a847e6d5310c9d64\"\n  }\n}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        2752,
-        688
-      ],
-      "name": "Edit Fields",
-      "id": "b10b7e49-eee2-4758-bcc9-932853ef17eb"
-    },
-    {
-      "parameters": {
-        "resource": "fileFolder",
-        "filter": {
-          "folderId": {
-            "__rl": true,
-            "value": "1hD1U4O3mASjQsszr3GxvGXhUVpdgn789",
-            "mode": "list",
-            "cachedResultName": "N8N Foto Portada Faja Moldeadora Traspirable",
-            "cachedResultUrl": "https://drive.google.com/drive/folders/1hD1U4O3mASjQsszr3GxvGXhUVpdgn789"
-          }
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
-      "position": [
-        1152,
-        0
-      ],
-      "name": "Search files and folders",
-      "id": "cb60b19d-e306-484a-b2c5-32fc36083164",
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "BxDjwEC7k45e2VsT",
-          "name": "Google Drive account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "download",
-        "fileId": {
-          "__rl": true,
-          "value": "={{ $json.id }}",
-          "mode": "id"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
-      "position": [
-        1328,
-        0
-      ],
-      "name": "Download file",
-      "id": "7ad04327-e0b9-428c-a48a-5788c810d371",
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "BxDjwEC7k45e2VsT",
-          "name": "Google Drive account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "download",
-        "fileId": {
-          "__rl": true,
-          "value": "1-J2aI_eFoihJvfGEyJAECsivfgQvw69S",
-          "mode": "id"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
-      "position": [
-        2000,
-        0
-      ],
-      "name": "Download file1",
-      "id": "97400a02-6150-4e21-b70e-d745bc5219b5",
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "BxDjwEC7k45e2VsT",
-          "name": "Google Drive account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "fileFolder",
-        "filter": {
-          "folderId": {
-            "__rl": true,
-            "value": "11eaug5IZVNuf88kWfSJz2kEXMmerrAc7",
-            "mode": "list",
-            "cachedResultName": "N8N tabla de medidas y tallas faja moldeadra traspirable",
-            "cachedResultUrl": "https://drive.google.com/drive/folders/11eaug5IZVNuf88kWfSJz2kEXMmerrAc7"
-          }
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
-      "position": [
-        1888,
-        688
-      ],
-      "name": "Search files and folders1",
-      "id": "946ec9b6-0bb8-4ccd-bd06-f2bd011b0648",
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "BxDjwEC7k45e2VsT",
-          "name": "Google Drive account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "download",
-        "fileId": {
-          "__rl": true,
-          "value": "={{ $json.id }}",
-          "mode": "id"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
-      "position": [
-        2032,
-        688
-      ],
-      "name": "Download file2",
-      "id": "dff0dc12-22a1-4d6b-9a9c-5d0c2afc94b1",
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "BxDjwEC7k45e2VsT",
-          "name": "Google Drive account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "textBody": "=Perfecto Querida! 💖 Aquí tienes toda la información de la Faja Moldeadora Transpirable para que te enamores de ella: *✨ Faja Moldeadora Transpirable ✨*",
-        "additionalFields": {}
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        528,
-        0
-      ],
-      "name": "Send message",
-      "id": "d6d8076d-eeb0-4abf-b378-6029f412eb8f",
-      "webhookId": "66f55a36-6c1a-4bc7-85c7-c6470a71f345",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "967228859816058",
-        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.query }}",
-        "messageType": "image",
-        "mediaPath": "useMedian8n",
-        "additionalFields": {
-          "mediaCaption": "💰 Precio: $45.000 pesos"
-        }
-      },
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1,
-      "position": [
-        1488,
-        0
-      ],
-      "name": "Send message1",
-      "id": "2b6925d6-4f73-474e-b6e5-eb996295efef",
-      "webhookId": "85124117-2538-4deb-9b84-cd37066a02fe",
-      "credentials": {
-        "whatsAppApi": {
-          "id": "KA3kaxHkgldVBb0O",
-          "name": "WhatsApp account Salida venus Comercial"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "append",
-        "documentId": {
-          "__rl": true,
-          "value": "1NodVBQDdmB5FnCPibb40Wz8Ul-wD7ZiBz-TW6AqDfWg",
-          "mode": "list",
-          "cachedResultName": "Excel venus la forma perfecta  ",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1NodVBQDdmB5FnCPibb40Wz8Ul-wD7ZiBz-TW6AqDfWg/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 19523115,
-          "mode": "list",
-          "cachedResultName": "Ventana_Comercial",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1NodVBQDdmB5FnCPibb40Wz8Ul-wD7ZiBz-TW6AqDfWg/edit#gid=19523115"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "FechaHora": "={{ $now.setZone('America/Bogota').toFormat('dd-MM-yyyy hh:mm:ss a') }}",
-            "Numero": "={{ $('When Executed by Another Workflow').item.json.query }}",
-            "Mensaje": "=",
-            "Imagen1_URL": "={{ $('Download file').item.json.name }}",
-            "Estado": "=ENVIADO",
-            "Respuesta": "={{ $json.mensaje }}",
-            "ID": "={{ new Date().getTime() }}",
-            "Canal": "W A ",
-            "tipo": "IA AGENTE FAJA MOLDEADORA"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "tipo",
-              "displayName": "tipo",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "FechaHora",
-              "displayName": "FechaHora",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Numero",
-              "displayName": "Numero",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Estado",
-              "displayName": "Estado",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Canal",
-              "displayName": "Canal",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Mensaje",
-              "displayName": "Mensaje",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Respuesta",
-              "displayName": "Respuesta",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Imagen1_URL",
-              "displayName": "Imagen1_URL",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "ID",
-              "displayName": "ID",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.6,
-      "position": [
-        2464,
-        688
-      ],
-      "name": "SALIDA FAJA MOLDEADORA",
-      "id": "fbdae872-6e5d-4607-8bba-d61780c06465",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "TYg0BZIAxcf7E5sW",
-          "name": "Google Sheets account"
-        }
-      }
-    }
-  ],
-  "connections": {
-    "WhatsApp Business Cloud1": {
-      "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "When Executed by Another Workflow": {
-      "main": [
-        [
-          {
-            "node": "Send message",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WhatsApp Business Cloud3": {
-      "main": [
-        [
-          {
-            "node": "SALIDA FAJA MOLDEADORA",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WhatsApp Business Cloud4": {
-      "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud5",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WhatsApp Business Cloud5": {
-      "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud6",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WhatsApp Business Cloud6": {
-      "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud7",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WhatsApp Business Cloud7": {
-      "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud8",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WhatsApp Business Cloud8": {
-      "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud9",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WhatsApp Business Cloud9": {
-      "main": [
-        [
-          {
-            "node": "Search files and folders1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Search files and folders": {
-      "main": [
-        [
-          {
-            "node": "Download file",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Download file": {
-      "main": [
-        [
-          {
-            "node": "Send message1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Download file1": {
-      "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Search files and folders1": {
-      "main": [
-        [
-          {
-            "node": "Download file2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Download file2": {
-      "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Send message": {
-      "main": [
-        [
-          {
-            "node": "Search files and folders",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Send message1": {
-      "main": [
-        [
-          {
-            "node": "Download file1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "SALIDA FAJA MOLDEADORA": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    }
-  },
-  "pinData": {},
-  "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "9a8d0686adf6914aaf7bd3e472cc20cbf146406b96153e84a847e6d5310c9d64"
-  }
-}
